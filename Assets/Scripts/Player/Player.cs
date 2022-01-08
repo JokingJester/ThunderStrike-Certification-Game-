@@ -4,7 +4,9 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    public int _weaponLevel = 1;
     private float _canFire = -1;
+    private GameObject _projectile;
     private Transform _target;
 
     [Header("Speeds")]
@@ -18,7 +20,12 @@ public class Player : MonoBehaviour
     [SerializeField] private Transform _downTarget;
 
     [Header("Projectiles")]
-    [SerializeField] private GameObject _fireballPrefab;
+    [SerializeField] private GameObject _singleFireballPrefab;
+    [SerializeField] private GameObject _doubleFireballPrefab;
+    [SerializeField] private GameObject _tripleFireballPrefab;
+    [SerializeField] private GameObject _wavePrefab;
+    [SerializeField] private GameObject _bigFireballPrefab;
+    [SerializeField] private GameObject _chainFireballPrefab;
 
     [Header("Rotor")]
     [SerializeField] private Rotor _rotor;
@@ -58,9 +65,31 @@ public class Player : MonoBehaviour
 
     public void Shoot()
     {
+        //switch between weapon level
+        switch (_weaponLevel)
+        {
+            case 1:
+                _projectile = _singleFireballPrefab;
+                break;
+            case 2:
+                _projectile = _doubleFireballPrefab;
+                break;
+            case 3:
+                _projectile = _tripleFireballPrefab;
+                break;
+            case 4:
+                _projectile = _wavePrefab;
+                break;
+            case 5:
+                _projectile = _bigFireballPrefab;
+                break;
+            case 6:
+                _projectile = _chainFireballPrefab;
+                break;
+        }
         if(Time.time > _canFire)
         {
-            Instantiate(_fireballPrefab, transform.position + new Vector3(3f,-0.5f,0), Quaternion.identity);
+            Instantiate(_projectile, transform.position + new Vector3(3f,-0.5f,0), Quaternion.identity);
             _canFire = Time.time + _firerate;
         }
     }

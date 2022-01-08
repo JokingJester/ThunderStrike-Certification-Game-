@@ -419,13 +419,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6313f4a79dbd0040b864f2c5173d5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _weaponLevel: 6
   _speed: 25
   _slerpSpeed: 7
   _firerate: 0.3
   _middleTarget: {fileID: 2084324010}
   _upTarget: {fileID: 61917433}
   _downTarget: {fileID: 1232974339}
-  _fireballPrefab: {fileID: 5050648036042021215, guid: 5ab6f89cce33049e78cc4bab1334d150, type: 3}
+  _singleFireballPrefab: {fileID: 5050648036042021215, guid: 5ab6f89cce33049e78cc4bab1334d150, type: 3}
+  _doubleFireballPrefab: {fileID: 5028725586173214466, guid: 66c5fee6409bb4aeca2d2ed0a0c1e482, type: 3}
+  _tripleFireballPrefab: {fileID: 2353006698048514175, guid: 365e616f94dfd4c9280666636462fdf7, type: 3}
+  _wavePrefab: {fileID: 5551080029881815029, guid: 5e7c0f93e8a3d488fa7a67d7a4a7f8da, type: 3}
+  _bigFireballPrefab: {fileID: 674436640797044400, guid: a0e1df20c95e94471b1a6a779271752c, type: 3}
+  _chainFireballPrefab: {fileID: 6457018432709790018, guid: 68ed3614b518f684cb1b3cfb9fcb27b6, type: 3}
   _rotor: {fileID: 300988518}
 --- !u!1 &300988514 stripped
 GameObject:
@@ -15752,7 +15758,6 @@ ParticleSystemRenderer:
   m_RendererPriority: 0
   m_Materials:
   - {fileID: 2100000, guid: af8c89d5faefa462c97ca85f64f9e787, type: 2}
-  - {fileID: 0}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
