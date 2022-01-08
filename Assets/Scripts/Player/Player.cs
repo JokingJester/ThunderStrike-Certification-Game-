@@ -9,6 +9,8 @@ public class Player : MonoBehaviour
     private GameObject _projectile;
     private Transform _target;
 
+    [SerializeField] private Animator _anim;
+
     [Header("Speeds")]
     [SerializeField] private float _speed;
     [SerializeField] private float _slerpSpeed;
@@ -101,6 +103,7 @@ public class Player : MonoBehaviour
             Destroy(other.gameObject);
             if (_weaponLevel < 6)
                 _weaponLevel++;
+            _anim.SetTrigger("Powerup");
         }
     }
 }
