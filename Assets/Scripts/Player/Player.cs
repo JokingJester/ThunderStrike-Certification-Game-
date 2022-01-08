@@ -93,4 +93,14 @@ public class Player : MonoBehaviour
             _canFire = Time.time + _firerate;
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Powerup")
+        {
+            Destroy(other.gameObject);
+            if (_weaponLevel < 6)
+                _weaponLevel++;
+        }
+    }
 }
