@@ -4,13 +4,23 @@ using UnityEngine;
 
 public class Player : MonoBehaviour
 {
+    private float _canFire = -1;
+    private Transform _target;
+
+    [Header("Speeds")]
     [SerializeField] private float _speed;
     [SerializeField] private float _slerpSpeed;
-    private Transform _target;
+    [SerializeField] private float _firerate;
+
+    [Header("Targets")]
     [SerializeField] private Transform _middleTarget;
     [SerializeField] private Transform _upTarget;
     [SerializeField] private Transform _downTarget;
 
+    [Header("Projectiles")]
+    [SerializeField] private GameObject _fireballPrefab;
+
+    [Header("Rotor")]
     [SerializeField] private Rotor _rotor;
 
     public void Movement(Vector2 direction)
@@ -44,5 +54,14 @@ public class Player : MonoBehaviour
 
         transform.position = clampedPosition;
         transform.rotation = clampedRotation;
+    }
+
+    public void Shoot()
+    {
+        if(Time.time > _canFire)
+        {
+            Instantiate(_fireballPrefab, transform.position + new Vector3(3f,-0.5f,0), Quaternion.identity);
+            _canFire = Time.time + _firerate;
+        }
     }
 }
