@@ -10,6 +10,17 @@ public class Player : MonoBehaviour
     {
         transform.Translate(direction * _speed * Time.deltaTime);
     }
-    //create movement method with vector 2 parameter direction
-    //transform translate(direction * speed * time.deltatime
+
+    private void Update()
+    {
+        ClampPlayer();
+    }
+
+    private void ClampPlayer()
+    {
+        Vector2 clampedPosition = transform.position;
+        clampedPosition.y = Mathf.Clamp(clampedPosition.y, -17, 13);
+        clampedPosition.x = Mathf.Clamp(clampedPosition.x, -26, 26);
+        transform.position = clampedPosition;
+    }
 }
