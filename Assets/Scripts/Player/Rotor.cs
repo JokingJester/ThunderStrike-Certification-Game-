@@ -4,7 +4,7 @@ using UnityEngine;
 
 public class Rotor : MonoBehaviour
 {
-    [SerializeField] private float _speed;
+    public float _speed;
 
     void Update()
     {
