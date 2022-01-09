@@ -11,6 +11,12 @@ public class PlayerInputReader : MonoBehaviour
     {
         _input = new GameInputs();
         _input.Player.Enable();
+        _input.Player.SlowTime.performed += SlowTime_performed;
+    }
+
+    private void SlowTime_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        _player.SlowDownTime();
     }
 
     // Update is called once per frame
@@ -19,5 +25,10 @@ public class PlayerInputReader : MonoBehaviour
         _player.Movement(_input.Player.Movement.ReadValue<Vector2>());
         if (_input.Player.Shoot.ReadValue<float>() == 1)
             _player.Shoot();
+    }
+
+    private void OnDisable()
+    {
+        _input.Player.SlowTime.performed -= SlowTime_performed;
     }
 }
