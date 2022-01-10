@@ -29,4 +29,9 @@ public class Enemy : MonoBehaviour
             ChooseRandomPattern();
         }
     }
+
+    public void ShootProjectile(GameObject prefab)
+    {
+        Instantiate(prefab, transform.position, Quaternion.identity);
+    }
 }
