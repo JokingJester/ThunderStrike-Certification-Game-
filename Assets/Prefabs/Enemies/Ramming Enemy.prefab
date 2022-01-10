@@ -190,6 +190,7 @@ GameObject:
   - component: {fileID: 8296172668521900214}
   - component: {fileID: 8296172668521900213}
   - component: {fileID: 8296172668521900212}
+  - component: {fileID: 3638884743010783917}
   m_Layer: 0
   m_Name: Ramming Enemy
   m_TagString: Untagged
@@ -288,7 +289,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: e47cca38a2cc2634495d8f4c7fdb2206, type: 2}
   m_InitialState: 1
-  m_WrapMode: 1
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -325,6 +326,26 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &3638884743010783917
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4630651605424755992}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 8296172668521900213}
+  _assets:
+  - {fileID: 11400000, guid: 658a47514419f91478920dbadbf77520, type: 2}
+  - {fileID: 11400000, guid: b9b66234a84f4574fb299bfb56fc57ea, type: 2}
+  - {fileID: 11400000, guid: c1ed94b3ae8a7bb4b8f829801b4787ac, type: 2}
+  - {fileID: 11400000, guid: 1668ba64adab55e4c997b510e8cb6e6b, type: 2}
+  - {fileID: 11400000, guid: df904baaa6f5248439be6d89991e80cc, type: 2}
+  - {fileID: 11400000, guid: e47cca38a2cc2634495d8f4c7fdb2206, type: 2}
 --- !u!1 &6984834988114814357
 GameObject:
   m_ObjectHideFlags: 0

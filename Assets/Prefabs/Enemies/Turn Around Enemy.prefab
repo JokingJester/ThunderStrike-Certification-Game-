@@ -336,6 +336,7 @@ GameObject:
   - component: {fileID: 4187396067377459950}
   - component: {fileID: 5360907842817513534}
   - component: {fileID: 5360907842817513533}
+  - component: {fileID: 510653157}
   m_Layer: 0
   m_Name: Turn Around Enemy
   m_TagString: Untagged
@@ -372,7 +373,7 @@ PlayableDirector:
   serializedVersion: 3
   m_PlayableAsset: {fileID: 11400000, guid: 54ff909588323204e9106848f1fc4c50, type: 2}
   m_InitialState: 1
-  m_WrapMode: 1
+  m_WrapMode: 2
   m_DirectorUpdateMode: 1
   m_InitialTime: 0
   m_SceneBindings:
@@ -403,3 +404,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &510653157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4187396067377098446}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 5360907842817513534}
+  _assets:
+  - {fileID: 11400000, guid: de41a7f0b96afc14ba6db9a337452112, type: 2}
+  - {fileID: 11400000, guid: 146628e7ed023a8449e6a76f7140a723, type: 2}
+  - {fileID: 11400000, guid: 54ff909588323204e9106848f1fc4c50, type: 2}
+  - {fileID: 11400000, guid: 146628e7ed023a8449e6a76f7140a723, type: 2}

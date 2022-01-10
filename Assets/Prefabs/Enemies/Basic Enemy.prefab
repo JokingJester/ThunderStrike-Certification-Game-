@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 4739860309623624496}
   - component: {fileID: 4739860308963887882}
   - component: {fileID: 4739860308963887881}
+  - component: {fileID: 578948973}
   m_Layer: 0
   m_Name: Basic Enemy
   m_TagString: Untagged
@@ -27,7 +28,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 4739860309625556464}
-  m_LocalRotation: {x: 0, y: -0.70710695, z: -0, w: 0.70710665}
+  m_LocalRotation: {x: 0, y: -0.7071068, z: 0, w: 0.7071068}
   m_LocalPosition: {x: 12.79, y: 2.32, z: 0.42}
   m_LocalScale: {x: 0.72181, y: 0.72181, z: 0.72181}
   m_Children: []
@@ -128,3 +129,21 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &578948973
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4739860309625556464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 4739860308963887882}
+  _assets:
+  - {fileID: 11400000, guid: b185238329953ef4a80aee73bc3b39ac, type: 2}
+  - {fileID: 11400000, guid: b82fa1f6e59df9845b56af34afd6327f, type: 2}
+  - {fileID: 11400000, guid: 39c46af406895e34f9bb99824e4882e1, type: 2}
+  - {fileID: 11400000, guid: fe702d3dd926cfc4fb0fec278f95311b, type: 2}

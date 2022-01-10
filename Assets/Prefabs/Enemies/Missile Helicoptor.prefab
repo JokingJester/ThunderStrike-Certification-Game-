@@ -270,6 +270,7 @@ GameObject:
   - component: {fileID: 1073710483570339783}
   - component: {fileID: 26396058}
   - component: {fileID: 26396056}
+  - component: {fileID: 5635174203107799203}
   m_Layer: 0
   m_Name: Missile Helicoptor
   m_TagString: Untagged
@@ -385,6 +386,23 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5635174203107799203
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1073710483572273415}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 26396058}
+  _assets:
+  - {fileID: 11400000, guid: b671f0421a11e8c4ea1980d00828277a, type: 2}
+  - {fileID: 11400000, guid: 71112e98d29013040bc3501a25b495f7, type: 2}
+  - {fileID: 11400000, guid: 71112e98d29013040bc3501a25b495f7, type: 2}
 --- !u!1 &1073710483572273417
 GameObject:
   m_ObjectHideFlags: 0

@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 2184232898502854897}
   - component: {fileID: 1150926672}
   - component: {fileID: 1150926671}
+  - component: {fileID: 1360755489850168563}
   m_Layer: 0
   m_Name: Gun Boat
   m_TagString: Untagged
@@ -125,3 +126,20 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &1360755489850168563
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2184232898500924977}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 1150926672}
+  _assets:
+  - {fileID: 11400000, guid: e5f2c2cdbdc361d42a63f34d6b46cc43, type: 2}
+  - {fileID: 11400000, guid: 8e16a04a505df47478ea0c81072d36e1, type: 2}
+  - {fileID: 11400000, guid: 8e16a04a505df47478ea0c81072d36e1, type: 2}

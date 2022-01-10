@@ -11,8 +11,9 @@ GameObject:
   - component: {fileID: 4165354542371483049}
   - component: {fileID: 4165354542098370231}
   - component: {fileID: 4165354542098370230}
+  - component: {fileID: 5139557033054643}
   m_Layer: 0
-  m_Name: MIG
+  m_Name: Basic Enemy 2
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -79,6 +80,24 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!114 &5139557033054643
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4165354542371385737}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _director: {fileID: 4165354542098370231}
+  _assets:
+  - {fileID: 11400000, guid: dde9cd8b6941e7b489a82979d97aab55, type: 2}
+  - {fileID: 11400000, guid: f8498d91255161c4a9f5c90593d13807, type: 2}
+  - {fileID: 11400000, guid: badd7be7090c10e488edc04316ef8375, type: 2}
+  - {fileID: 11400000, guid: 57abe2c5ee817c24d9bda7834190fb57, type: 2}
 --- !u!1 &4165354542371385739
 GameObject:
   m_ObjectHideFlags: 0
