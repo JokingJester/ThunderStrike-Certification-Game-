@@ -189,7 +189,7 @@ public class Player : MonoBehaviour, IDamageable
     public void Damage(float damageAmount)
     {
         Health -= damageAmount;
-
+        _weaponLevel--;
         if(Health < 1)
         {
             Instantiate(_largeExplosion, transform.position, Quaternion.identity);

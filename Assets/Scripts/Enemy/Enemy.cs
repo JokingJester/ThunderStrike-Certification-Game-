@@ -57,4 +57,14 @@ public class Enemy : MonoBehaviour, IDamageable
             Destroy(this.gameObject);
         }
     }
+
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == "Player")
+        {
+            IDamageable idamage = other.GetComponent<IDamageable>();
+            if (idamage != null)
+                idamage.Damage(1);
+        }
+    }
 }

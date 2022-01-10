@@ -386,9 +386,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b6313f4a79dbd0040b864f2c5173d5e5, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canSlowTime: 1
   _health: 3
   _weaponLevel: 3
-  _canSlowTime: 1
   _anim: {fileID: 285407785}
   _boxCollider: {fileID: 285407784}
   _speed: 25
@@ -408,6 +408,7 @@ MonoBehaviour:
   _bigFireballPrefab: {fileID: 674436640797044400, guid: a0e1df20c95e94471b1a6a779271752c, type: 3}
   _chainFireballPrefab: {fileID: 6457018432709790018, guid: 68ed3614b518f684cb1b3cfb9fcb27b6, type: 3}
   _shield: {fileID: 1776232122}
+  _largeExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
   _rotor: {fileID: 300988518}
 --- !u!54 &285407783
 Rigidbody:
