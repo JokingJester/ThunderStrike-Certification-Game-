@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
 
     [SerializeField] private PlayableDirector _director;
     [SerializeField] private PlayableAsset[] _assets;
+    [SerializeField] private Quaternion _rotation;
     void Start()
     {
         ChooseRandomPattern();
@@ -32,6 +33,6 @@ public class Enemy : MonoBehaviour
 
     public void ShootProjectile(GameObject prefab)
     {
-        Instantiate(prefab, transform.position, Quaternion.identity);
+        Instantiate(prefab, transform.position, _rotation);
     }
 }

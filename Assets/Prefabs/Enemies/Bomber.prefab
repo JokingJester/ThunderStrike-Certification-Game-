@@ -97,6 +97,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 7664e44d87d63b340b5e1be76ae65079, type: 2}
   - {fileID: 11400000, guid: 3f86e416179a6184392e3f46a98b50c9, type: 2}
   - {fileID: 11400000, guid: fa221fe24992d554c9a5abb876e7ce2f, type: 2}
+  _rotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &42607515113085005
 GameObject:
   m_ObjectHideFlags: 0
