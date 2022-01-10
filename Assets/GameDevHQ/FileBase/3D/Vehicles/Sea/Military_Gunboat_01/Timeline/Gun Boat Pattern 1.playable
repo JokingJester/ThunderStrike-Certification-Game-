@@ -166,7 +166,42 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 2.45
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 2.95
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.4166667
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 3.9166667
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 6.0666666
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0

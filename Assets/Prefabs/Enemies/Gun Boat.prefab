@@ -93,7 +93,7 @@ PlayableDirector:
   m_GameObject: {fileID: 2184232898500924977}
   m_Enabled: 1
   serializedVersion: 3
-  m_PlayableAsset: {fileID: 11400000, guid: 8e16a04a505df47478ea0c81072d36e1, type: 2}
+  m_PlayableAsset: {fileID: 11400000, guid: e5f2c2cdbdc361d42a63f34d6b46cc43, type: 2}
   m_InitialState: 1
   m_WrapMode: 2
   m_DirectorUpdateMode: 1
@@ -143,3 +143,4 @@ MonoBehaviour:
   - {fileID: 11400000, guid: e5f2c2cdbdc361d42a63f34d6b46cc43, type: 2}
   - {fileID: 11400000, guid: 8e16a04a505df47478ea0c81072d36e1, type: 2}
   - {fileID: 11400000, guid: 8e16a04a505df47478ea0c81072d36e1, type: 2}
+  _rotation: {x: 100, y: 100, z: 100, w: -100}

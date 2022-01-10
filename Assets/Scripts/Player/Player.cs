@@ -52,6 +52,7 @@ public class Player : MonoBehaviour
     [Header("Rotor")]
     [SerializeField] private Rotor _rotor;
 
+
     private void Start()
     {
         _regDuration = new WaitForSeconds(_defaultDuration);
