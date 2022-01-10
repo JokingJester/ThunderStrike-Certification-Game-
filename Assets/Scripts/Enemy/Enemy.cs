@@ -16,6 +16,7 @@ public class Enemy : MonoBehaviour, IDamageable
     [SerializeField] private PlayableAsset[] _assets;
     [SerializeField] private Quaternion _rotation;
 
+    [HideInInspector] public bool hitByChainFireball;
     public float Health { get; set; }
 
     void Start()
@@ -49,7 +50,7 @@ public class Enemy : MonoBehaviour, IDamageable
     {
         Health -= damageAmount;
 
-        if(Health < 1)
+        if (Health < 1)
         {
             GameObject explosion = Instantiate(_bigExplosion, transform.position, Quaternion.identity);
             if(_explosionScale != 0)
@@ -66,5 +67,17 @@ public class Enemy : MonoBehaviour, IDamageable
             if (idamage != null)
                 idamage.Damage(1);
         }
+    }
+
+    public void CallCoroutine()
+    {
+        StartCoroutine(SetBoolBackToFalseRoutine());
+    }
+
+    public IEnumerator SetBoolBackToFalseRoutine()
+    {
+        hitByChainFireball = true;
+        yield return new WaitForSeconds(0.2f);
+        hitByChainFireball = false;
     }
 }

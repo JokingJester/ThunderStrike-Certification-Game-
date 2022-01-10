@@ -8,7 +8,7 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected bool _damagePlayer;
     [SerializeField] protected float _damageAmount;
 
-    private void OnTriggerEnter(Collider other)
+    public virtual void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy" && _damagePlayer == false)
         {

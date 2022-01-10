@@ -95,6 +95,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 2
+  _explosionScale: 0
   _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
   _director: {fileID: 4165354542098370231}
   _assets:
@@ -103,6 +104,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: badd7be7090c10e488edc04316ef8375, type: 2}
   - {fileID: 11400000, guid: 57abe2c5ee817c24d9bda7834190fb57, type: 2}
   _rotation: {x: 0, y: 0, z: 0, w: 0}
+  _boxCollider: {fileID: -777584801578921536}
+  hitByChainFireball: 0
 --- !u!54 &4595851584148878664
 Rigidbody:
   m_ObjectHideFlags: 0

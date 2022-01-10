@@ -409,6 +409,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 71112e98d29013040bc3501a25b495f7, type: 2}
   - {fileID: 11400000, guid: 71112e98d29013040bc3501a25b495f7, type: 2}
   _rotation: {x: 90, y: 0, z: -90, w: 0}
+  _boxCollider: {fileID: 4373175376387444889}
+  hitByChainFireball: 0
 --- !u!54 &5286786519280256263
 Rigidbody:
   m_ObjectHideFlags: 0

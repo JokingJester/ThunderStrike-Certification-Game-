@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 2
+  _explosionScale: 0
   _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
   _director: {fileID: 4739860308963887882}
   _assets:
@@ -154,6 +155,8 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39c46af406895e34f9bb99824e4882e1, type: 2}
   - {fileID: 11400000, guid: fe702d3dd926cfc4fb0fec278f95311b, type: 2}
   _rotation: {x: 0, y: 0, z: 0, w: 0}
+  _boxCollider: {fileID: -6371245660119701290}
+  hitByChainFireball: 0
 --- !u!54 &4158118649379205864
 Rigidbody:
   m_ObjectHideFlags: 0
