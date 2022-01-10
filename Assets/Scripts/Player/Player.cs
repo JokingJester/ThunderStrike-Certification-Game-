@@ -5,8 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
 {
-    public float _health;
-    public int _weaponLevel = 1;
 
     private float _canFire = -1;
     private float _canFireUnscaled = -1;
@@ -22,6 +20,11 @@ public class Player : MonoBehaviour, IDamageable
 
     [HideInInspector] public bool _canSlowTime = true;
 
+    [Header("Health And Weapon Level")]
+    [SerializeField] private float _health;
+    public int _weaponLevel = 1;
+
+    [Header("Animator And Box Collider")]
     [SerializeField] private Animator _anim;
     [SerializeField] private BoxCollider _boxCollider;
 
@@ -48,7 +51,10 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private GameObject _wavePrefab;
     [SerializeField] private GameObject _bigFireballPrefab;
     [SerializeField] private GameObject _chainFireballPrefab;
+
+    [Header("Shield And Explosion Prefab")]
     [SerializeField] private GameObject _shield;
+    [SerializeField] private GameObject _largeExplosion;
 
     [Header("Rotor")]
     [SerializeField] private Rotor _rotor;
@@ -186,6 +192,7 @@ public class Player : MonoBehaviour, IDamageable
 
         if(Health < 1)
         {
+            Instantiate(_largeExplosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
     }

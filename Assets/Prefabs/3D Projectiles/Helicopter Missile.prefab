@@ -98,7 +98,7 @@ MonoBehaviour:
   _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
   _damagePlayer: 1
   _damageAmount: 1
-  _speed: 25
+  _speed: 55
 --- !u!65 &3829876199484181901
 BoxCollider:
   m_ObjectHideFlags: 0

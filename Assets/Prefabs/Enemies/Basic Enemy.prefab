@@ -146,6 +146,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 2
+  _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
   _director: {fileID: 4739860308963887882}
   _assets:
   - {fileID: 11400000, guid: b185238329953ef4a80aee73bc3b39ac, type: 2}

@@ -6,8 +6,12 @@ using UnityEngine.Playables;
 public class Enemy : MonoBehaviour, IDamageable
 {
     private double _duration;
-
+    [Header("Health Settngs")]
     [SerializeField] private float _health;
+    [SerializeField] private float _explosionScale;
+    [SerializeField] private GameObject _bigExplosion;
+
+    [Header("Flight Pattern Settings")]
     [SerializeField] private PlayableDirector _director;
     [SerializeField] private PlayableAsset[] _assets;
     [SerializeField] private Quaternion _rotation;
@@ -47,8 +51,9 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if(Health < 1)
         {
-            //spawn big explosion
-            //destory
+            GameObject explosion = Instantiate(_bigExplosion, transform.position, Quaternion.identity);
+            if(_explosionScale != 0)
+                explosion.transform.localScale = new Vector3(_explosionScale, _explosionScale, _explosionScale);
             Destroy(this.gameObject);
         }
     }
