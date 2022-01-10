@@ -490,7 +490,77 @@ AnimationClip:
   m_EulerEditorCurves: []
   m_HasGenericRootTransform: 1
   m_HasMotionFloatCurves: 0
-  m_Events: []
+  m_Events:
+  - time: 5.4166665
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 7.733333
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 9.583333
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 11.7
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 12.733334
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 14.916667
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 16.433332
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 19.1
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 21.283333
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
+  - time: 24.166666
+    functionName: ShootProjectile
+    data: 
+    objectReferenceParameter: {fileID: 8326344478051213662, guid: c3b27ad531f6c024f8380f3c0dccadc9, type: 3}
+    floatParameter: 0
+    intParameter: 0
+    messageOptions: 0
 --- !u!114 &11400000
 MonoBehaviour:
   m_ObjectHideFlags: 0
