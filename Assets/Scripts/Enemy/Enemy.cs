@@ -3,15 +3,20 @@ using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.Playables;
 
-public class Enemy : MonoBehaviour
+public class Enemy : MonoBehaviour, IDamageable
 {
     private double _duration;
 
+    [SerializeField] private float _health;
     [SerializeField] private PlayableDirector _director;
     [SerializeField] private PlayableAsset[] _assets;
     [SerializeField] private Quaternion _rotation;
+
+    public float Health { get; set; }
+
     void Start()
     {
+        Health = _health;
         ChooseRandomPattern();
     }
 
@@ -34,5 +39,17 @@ public class Enemy : MonoBehaviour
     public void ShootProjectile(GameObject prefab)
     {
         Instantiate(prefab, transform.position, _rotation);
+    }
+
+    public void Damage(float damageAmount)
+    {
+        Health -= damageAmount;
+
+        if(Health < 1)
+        {
+            //spawn big explosion
+            //destory
+            Destroy(this.gameObject);
+        }
     }
 }

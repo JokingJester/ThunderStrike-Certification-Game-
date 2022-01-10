@@ -3,8 +3,9 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Player : MonoBehaviour
+public class Player : MonoBehaviour, IDamageable
 {
+    public float _health;
     public int _weaponLevel = 1;
 
     private float _canFire = -1;
@@ -52,9 +53,11 @@ public class Player : MonoBehaviour
     [Header("Rotor")]
     [SerializeField] private Rotor _rotor;
 
+    public float Health { get; set; }
 
     private void Start()
     {
+        Health = _health;
         _regDuration = new WaitForSeconds(_defaultDuration);
         _increaseDuration = new WaitForSeconds(_increasedDuration);
         _regRechargeRate = new WaitForSeconds(_defaultRechargeDuration);
@@ -175,5 +178,15 @@ public class Player : MonoBehaviour
         else
             yield return _decreasedRechargeRate;
         _canSlowTime = true;
+    }
+
+    public void Damage(float damageAmount)
+    {
+        Health -= damageAmount;
+
+        if(Health < 1)
+        {
+            Destroy(this.gameObject);
+        }
     }
 }

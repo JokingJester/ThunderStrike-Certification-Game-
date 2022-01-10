@@ -340,6 +340,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _health: 7
   _director: {fileID: 8296172668521900213}
   _assets:
   - {fileID: 11400000, guid: 658a47514419f91478920dbadbf77520, type: 2}
