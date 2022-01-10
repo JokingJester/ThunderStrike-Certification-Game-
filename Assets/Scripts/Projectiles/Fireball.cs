@@ -17,7 +17,8 @@ public class Fireball : Projectile
     // Update is called once per frame
    public virtual void Update()
     {
-        MoveUnscaled();
+        if(_damagePlayer == false)
+            MoveUnscaled();
         transform.Translate(Vector2.right * _speed * Time.deltaTime);
         if (transform.position.x >= 32)
             Destroy(this.gameObject);

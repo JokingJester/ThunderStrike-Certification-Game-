@@ -5,7 +5,7 @@ using UnityEngine;
 public class SpawnManager : MonoBehaviour
 {
     private bool _spawnEnemies;
-    private int _waveNumber = 1;
+    [SerializeField]private int _waveNumber = 1;
     private int _waveIndex;
     public Wave[] _waves;
     // Start is called before the first frame update
