@@ -403,13 +403,14 @@ MonoBehaviour:
   _health: 25
   _explosionScale: 5
   _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
+  _powerup: {fileID: 5524877749592252342, guid: bf37cda97ddb64af990698ac79b80519, type: 3}
   _director: {fileID: 26396058}
   _assets:
   - {fileID: 11400000, guid: b671f0421a11e8c4ea1980d00828277a, type: 2}
   - {fileID: 11400000, guid: 71112e98d29013040bc3501a25b495f7, type: 2}
   - {fileID: 11400000, guid: 71112e98d29013040bc3501a25b495f7, type: 2}
   _rotation: {x: 90, y: 0, z: -90, w: 0}
-  _boxCollider: {fileID: 4373175376387444889}
+  _hasPowerup: 0
   hitByChainFireball: 0
 --- !u!54 &5286786519280256263
 Rigidbody:

@@ -148,6 +148,7 @@ MonoBehaviour:
   _health: 2
   _explosionScale: 0
   _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
+  _powerup: {fileID: 5524877749592252342, guid: bf37cda97ddb64af990698ac79b80519, type: 3}
   _director: {fileID: 4739860308963887882}
   _assets:
   - {fileID: 11400000, guid: b185238329953ef4a80aee73bc3b39ac, type: 2}
@@ -155,7 +156,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 39c46af406895e34f9bb99824e4882e1, type: 2}
   - {fileID: 11400000, guid: fe702d3dd926cfc4fb0fec278f95311b, type: 2}
   _rotation: {x: 0, y: 0, z: 0, w: 0}
-  _boxCollider: {fileID: -6371245660119701290}
+  _hasPowerup: 0
   hitByChainFireball: 0
 --- !u!54 &4158118649379205864
 Rigidbody:

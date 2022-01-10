@@ -147,7 +147,10 @@ public class Player : MonoBehaviour, IDamageable
         {
             Destroy(other.gameObject);
             if (_weaponLevel < 6)
+            {
                 _weaponLevel++;
+                Health++;
+            }
             _anim.SetTrigger("Powerup");
         }
     }
