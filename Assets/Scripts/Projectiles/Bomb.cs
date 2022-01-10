@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class Bomb : MonoBehaviour
+public class Bomb : Projectile
 {
     [SerializeField] private float _speed;
     // Start is called before the first frame update

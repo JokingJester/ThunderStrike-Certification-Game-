@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 8816177165077663842}
   - component: {fileID: 4696352574035893482}
   - component: {fileID: 8924606190561696358}
+  - component: {fileID: 3364589181914162412}
   m_Layer: 0
   m_Name: Fire_Spritesheet_0 (2)
   m_TagString: Untagged
@@ -115,7 +116,22 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0735d48320c128242a5ccc98bb9ee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
+  _damagePlayer: 0
   _speed: 40
+--- !u!65 &3364589181914162412
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4330206379982787280}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.7381887}
+  m_Center: {x: 0, y: 0, z: 0.36909437}
 --- !u!1 &5028725586173214466
 GameObject:
   m_ObjectHideFlags: 0
@@ -125,7 +141,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 7623262686267054469}
-  - component: {fileID: 4039208966243317283}
   - component: {fileID: 5356994087677458630}
   m_Layer: 0
   m_Name: Fire_Double
@@ -150,19 +165,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &4039208966243317283
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5028725586173214466}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 2.29, y: 2.86, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!114 &5356994087677458630
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -187,6 +189,7 @@ GameObject:
   - component: {fileID: 5371115808658237391}
   - component: {fileID: 9059806800111326892}
   - component: {fileID: 1157174521769248307}
+  - component: {fileID: 602344014218410469}
   m_Layer: 0
   m_Name: Fire_Spritesheet_0 (1)
   m_TagString: Untagged
@@ -290,4 +293,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0735d48320c128242a5ccc98bb9ee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
+  _damagePlayer: 0
   _speed: 40
+--- !u!65 &602344014218410469
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8451737946782308070}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.6972665}
+  m_Center: {x: 0, y: 0, z: 0.34863335}

@@ -112,6 +112,7 @@ GameObject:
   m_Component:
   - component: {fileID: 8302266906432934389}
   - component: {fileID: 4870649745732153938}
+  - component: {fileID: 945355364781222844}
   m_Layer: 0
   m_Name: Chain Fireball
   m_TagString: Untagged
@@ -146,4 +147,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0735d48320c128242a5ccc98bb9ee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
+  _damagePlayer: 0
   _speed: 67
+--- !u!65 &945355364781222844
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6457018432709790018}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1.8300737}
+  m_Center: {x: 0, y: 0, z: 0.41503686}

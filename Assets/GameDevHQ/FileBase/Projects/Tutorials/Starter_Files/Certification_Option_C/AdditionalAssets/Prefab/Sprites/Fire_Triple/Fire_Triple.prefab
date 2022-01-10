@@ -9,7 +9,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 5224220385633378199}
-  - component: {fileID: 8680745961794471189}
   - component: {fileID: 2104238018350941614}
   m_Layer: 0
   m_Name: Fire_Triple
@@ -35,19 +34,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &8680745961794471189
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 2353006698048514175}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 5.59, y: 2.81, z: 1}
-  m_Center: {x: -0.39, y: 0.24, z: 0}
 --- !u!114 &2104238018350941614
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -72,6 +58,7 @@ GameObject:
   - component: {fileID: 5253634724338756701}
   - component: {fileID: 2295070364849700170}
   - component: {fileID: 2254157133618666682}
+  - component: {fileID: 1171895368674495025}
   m_Layer: 0
   m_Name: Fire_Spritesheet_3 (1)
   m_TagString: Untagged
@@ -156,6 +143,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0735d48320c128242a5ccc98bb9ee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
+  _damagePlayer: 0
   _speed: 40
 --- !u!95 &2254157133618666682
 Animator:
@@ -176,6 +165,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &1171895368674495025
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5755260011460608098}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2.475792}
+  m_Center: {x: 0, y: 0, z: 0.73789644}
 --- !u!1 &7406822120494880207
 GameObject:
   m_ObjectHideFlags: 0
@@ -188,6 +190,7 @@ GameObject:
   - component: {fileID: 8731952457710974648}
   - component: {fileID: 224289976370636455}
   - component: {fileID: 8705466629131616394}
+  - component: {fileID: 7396129833412207845}
   m_Layer: 0
   m_Name: Fire_Spritesheet_3
   m_TagString: Untagged
@@ -272,6 +275,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0735d48320c128242a5ccc98bb9ee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
+  _damagePlayer: 0
   _speed: 40
 --- !u!95 &8705466629131616394
 Animator:
@@ -292,6 +297,19 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &7396129833412207845
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7406822120494880207}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2.650238}
+  m_Center: {x: 0, y: 0, z: 0.82511926}
 --- !u!1 &8041799866245648987
 GameObject:
   m_ObjectHideFlags: 0
@@ -304,6 +322,7 @@ GameObject:
   - component: {fileID: 6720318556131313191}
   - component: {fileID: 2497619430973488335}
   - component: {fileID: 3014613922648520387}
+  - component: {fileID: 4576689459748709065}
   m_Layer: 0
   m_Name: Fire_Spritesheet_3 (2)
   m_TagString: Untagged
@@ -388,6 +407,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0735d48320c128242a5ccc98bb9ee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
+  _damagePlayer: 0
   _speed: 40
 --- !u!95 &3014613922648520387
 Animator:
@@ -408,3 +429,16 @@ Animator:
   m_HasTransformHierarchy: 1
   m_AllowConstantClipSamplingOptimization: 1
   m_KeepAnimatorControllerStateOnDisable: 0
+--- !u!65 &4576689459748709065
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8041799866245648987}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 2.7373734}
+  m_Center: {x: 0, y: 0, z: 0.8686867}
