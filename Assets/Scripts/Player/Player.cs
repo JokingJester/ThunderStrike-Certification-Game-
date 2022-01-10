@@ -5,7 +5,6 @@ using UnityEngine;
 
 public class Player : MonoBehaviour, IDamageable
 {
-
     private float _canFire = -1;
     private float _canFireUnscaled = -1;
 
@@ -27,6 +26,9 @@ public class Player : MonoBehaviour, IDamageable
     [Header("Animator And Box Collider")]
     [SerializeField] private Animator _anim;
     [SerializeField] private BoxCollider _boxCollider;
+
+    [Header("Camera Shake")]
+    [SerializeField] private CameraShake _camShake;
 
     [Header("Speeds")]
     [SerializeField] private float _speed;
@@ -190,6 +192,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         Health -= damageAmount;
         _weaponLevel--;
+        _camShake.SetupCameraShake(0.4f, 0.4f);
         if(Health < 1)
         {
             Instantiate(_largeExplosion, transform.position, Quaternion.identity);
