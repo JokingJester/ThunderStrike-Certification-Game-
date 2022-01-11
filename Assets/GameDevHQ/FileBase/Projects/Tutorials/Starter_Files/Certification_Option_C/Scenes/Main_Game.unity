@@ -966,8 +966,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canSlowTime: 1
-  _health: 5
-  _weaponLevel: 5
+  _health: 1
+  _weaponLevel: 1
   _anim: {fileID: 285407785}
   _boxCollider: {fileID: 285407784}
   _camShake: {fileID: 963194229}
@@ -989,7 +989,7 @@ MonoBehaviour:
   - projectile: {fileID: 2353006698048514175, guid: 365e616f94dfd4c9280666636462fdf7, type: 3}
     name: Triple Fireball
   - projectile: {fileID: 5551080029881815029, guid: 5e7c0f93e8a3d488fa7a67d7a4a7f8da, type: 3}
-    name: Wave
+    name: Fire Wave
   - projectile: {fileID: 674436640797044400, guid: a0e1df20c95e94471b1a6a779271752c, type: 3}
     name: Large Fireball
   - projectile: {fileID: 6457018432709790018, guid: 68ed3614b518f684cb1b3cfb9fcb27b6, type: 3}
@@ -7035,7 +7035,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f07af17f364e64ead8bcf4969d0085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveNumber: 3
+  _waveNumber: 1
   _waves:
   - waveData:
     - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
@@ -13602,6 +13602,7 @@ MonoBehaviour:
   _waveText: {fileID: 1286284351}
   _waveMessageText: {fileID: 239872552}
   _modal: {fileID: 1155130018}
+  _weaponLevelText: {fileID: 2005718534}
 --- !u!4 &1300541631
 Transform:
   m_ObjectHideFlags: 0
@@ -24531,7 +24532,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 1, y: 1}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: -178.28003, y: -91.29999}
+  m_AnchoredPosition: {x: -94.8, y: -56.1}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &2005718534
@@ -24617,7 +24618,7 @@ MonoBehaviour:
   m_VertexBufferAutoSizeReduction: 0
   m_useMaxVisibleDescender: 1
   m_pageToDisplay: 1
-  m_margin: {x: 0, y: 0, z: 0, w: 0}
+  m_margin: {x: -168.81668, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
   m_hasFontAssetChanged: 0

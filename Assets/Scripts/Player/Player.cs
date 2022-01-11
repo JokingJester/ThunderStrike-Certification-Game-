@@ -60,6 +60,7 @@ public class Player : MonoBehaviour, IDamageable
 
     private void Start()
     {
+        UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
         Health = _health;
         _regDuration = new WaitForSeconds(_defaultDuration);
         _increaseDuration = new WaitForSeconds(_increasedDuration);
@@ -127,6 +128,7 @@ public class Player : MonoBehaviour, IDamageable
                 Health++;
             }
             _anim.SetTrigger("Powerup");
+            UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
         }
     }
 
@@ -176,5 +178,6 @@ public class Player : MonoBehaviour, IDamageable
             Instantiate(_largeExplosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
+        UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
     }
 }

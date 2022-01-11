@@ -23,10 +23,14 @@ public class UIManager : MonoBehaviour
         _instance = this;
     }
 
+    [Header("Waves UI")]
     [SerializeField] private string[] _waveMessages;
     [SerializeField] private TMP_Text _waveText;
     [SerializeField] private TMP_Text _waveMessageText;
     [SerializeField] private ModalWindowManager _modal;
+
+    [Header("Weapon Level UI")]
+    [SerializeField] private TMP_Text _weaponLevelText;
 
 
     public void DisplayCurrentWave(int waveNumer)
@@ -35,6 +39,11 @@ public class UIManager : MonoBehaviour
         _waveMessageText.text = _waveMessages[waveNumer - 1];
         _modal.OpenWindow();
         StartCoroutine(CloseModelWindow());
+    }
+
+    public void DisplayCurrentWeapon(int weaponLevel, string weaponName)
+    {
+        _weaponLevelText.text = "Level " + weaponLevel + ": \n" + weaponName;
     }
 
     IEnumerator CloseModelWindow()
