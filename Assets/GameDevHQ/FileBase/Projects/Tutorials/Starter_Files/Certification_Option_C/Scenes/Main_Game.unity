@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canSlowTime: 1
-  _health: 2
-  _weaponLevel: 2
+  _health: 1
+  _weaponLevel: 1
   _anim: {fileID: 285407785}
   _boxCollider: {fileID: 285407784}
   _camShake: {fileID: 963194229}
