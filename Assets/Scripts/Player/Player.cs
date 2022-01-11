@@ -131,6 +131,7 @@ public class Player : MonoBehaviour, IDamageable
             _anim.SetTrigger("Powerup");
             UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
             UIManager.Instance.DisplayHealth(Health);
+            UIManager.Instance.AddScore(16);
         }
     }
 

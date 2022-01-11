@@ -75,6 +75,7 @@ public class Enemy : MonoBehaviour, IDamageable
 
         if (Health < 1)
         {
+            UIManager.Instance.AddScore(40);
             GameObject explosion = Instantiate(_bigExplosion, transform.position, Quaternion.identity);
             if(_explosionScale != 0)
                 explosion.transform.localScale = new Vector3(_explosionScale, _explosionScale, _explosionScale);

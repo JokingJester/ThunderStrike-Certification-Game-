@@ -28,7 +28,7 @@ public class Fireball : Projectile
     {
         if (_player != null)
         {
-            if (_player._canSlowTime == false && _player._weaponLevel >= 4)
+            if (_player._weaponLevel >= 4)
             {
                 transform.Translate(Vector2.right * _speed * Time.unscaledDeltaTime);
                 return;

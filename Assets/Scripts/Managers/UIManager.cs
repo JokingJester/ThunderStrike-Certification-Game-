@@ -24,6 +24,7 @@ public class UIManager : MonoBehaviour
         _instance = this;
     }
 
+    private int _score;
     [Header("Waves UI")]
     [SerializeField] private string[] _waveMessages;
     [SerializeField] private TMP_Text _waveText;
@@ -37,10 +38,14 @@ public class UIManager : MonoBehaviour
     [SerializeField] private Slider _slider;
     [SerializeField] private int _sliderMaxValue;
 
+    [Header("Score UI")]
+    [SerializeField] private TMP_Text _scoreText;
+
 
     private void Start()
     {
         _slider.maxValue = _sliderMaxValue;
+        AddScore(0);
     }
     public void DisplayCurrentWave(int waveNumer)
     {
@@ -58,6 +63,12 @@ public class UIManager : MonoBehaviour
     public void DisplayHealth(float health)
     {
         _slider.value = health + 1;
+    }
+
+    public void AddScore(int score)
+    {
+        _score += score;
+        _scoreText.text = "Score: " + _score;
     }
 
     IEnumerator CloseModelWindow()
