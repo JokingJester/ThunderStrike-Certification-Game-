@@ -16,9 +16,9 @@ public class SpawnManager : MonoBehaviour
 
     private IEnumerator SpawnRoutine()
     {
-        Debug.Log("Wave " + _waveNumber);
+        UIManager.Instance.DisplayCurrentWave(_waveNumber);
         _spawnEnemies = true;
-        yield return new WaitForSeconds(5);
+        yield return new WaitForSeconds(6);
         while (_spawnEnemies == true)
         {
             if(_waves[_waveNumber - 1].waveData[_waveIndex].spawnWithNoEnemies == false)
@@ -90,6 +90,7 @@ public class SpawnManager : MonoBehaviour
                 {
                     _waveNumber++;
                     _waveIndex = 0;
+                    yield return new WaitForSeconds(1.5f);
                     StartCoroutine(SpawnRoutine());
                 }
                 else
