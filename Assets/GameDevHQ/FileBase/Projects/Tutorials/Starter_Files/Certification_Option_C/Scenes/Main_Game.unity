@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canSlowTime: 1
-  _health: 6
-  _weaponLevel: 6
+  _health: 1
+  _weaponLevel: 1
   _anim: {fileID: 285407785}
   _boxCollider: {fileID: 285407784}
   _camShake: {fileID: 963194229}
@@ -5317,7 +5317,7 @@ Transform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 663684391}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: 0, y: 0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 61.5}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_Children:
@@ -5660,7 +5660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f07af17f364e64ead8bcf4969d0085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveNumber: 7
+  _waveNumber: 1
   _waves:
   - waveData:
     - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
@@ -6036,7 +6036,7 @@ MonoBehaviour:
     - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
       spawnRate: 1
       hasPowerup: 0
-      spawnWithNoEnemies: 1
+      spawnWithNoEnemies: 0
       bossFight: 0
       playSpecificPattern: 0
       specificPattern: 0
@@ -6062,7 +6062,7 @@ MonoBehaviour:
       playSpecificPattern: 0
       specificPattern: 0
     - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
-      spawnRate: 0.5
+      spawnRate: 2
       hasPowerup: 0
       spawnWithNoEnemies: 0
       bossFight: 0
@@ -6103,6 +6103,28 @@ MonoBehaviour:
       bossFight: 0
       playSpecificPattern: 0
       specificPattern: 0
+  - waveData:
+    - enemyPrefab: {fileID: 4095586381318687686, guid: c5385ad6c24d82740af483cfd4843096, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 2069205526312188134, guid: 2d8480c8ac14ce9458f3aaf244e91639, type: 3}
+      spawnRate: 5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 1
+    - enemyPrefab: {fileID: 5524877749592252342, guid: bf37cda97ddb64af990698ac79b80519, type: 3}
+      spawnRate: 4
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 1
 --- !u!4 &982056814
 Transform:
   m_ObjectHideFlags: 0
