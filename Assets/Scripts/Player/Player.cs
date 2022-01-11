@@ -62,6 +62,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
         Health = _health;
+        UIManager.Instance.DisplayHealth(Health);
         _regDuration = new WaitForSeconds(_defaultDuration);
         _increaseDuration = new WaitForSeconds(_increasedDuration);
         _regRechargeRate = new WaitForSeconds(_defaultRechargeDuration);
@@ -129,6 +130,7 @@ public class Player : MonoBehaviour, IDamageable
             }
             _anim.SetTrigger("Powerup");
             UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
+            UIManager.Instance.DisplayHealth(Health);
         }
     }
 
@@ -179,5 +181,6 @@ public class Player : MonoBehaviour, IDamageable
             Destroy(this.gameObject);
         }
         UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
+        UIManager.Instance.DisplayHealth(Health);
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using UnityEngine;
 using Michsky.UI.ModernUIPack;
 using TMPro;
+using UnityEngine.UI;
 
 public class UIManager : MonoBehaviour
 {
@@ -32,7 +33,15 @@ public class UIManager : MonoBehaviour
     [Header("Weapon Level UI")]
     [SerializeField] private TMP_Text _weaponLevelText;
 
+    [Header("Health UI")]
+    [SerializeField] private Slider _slider;
+    [SerializeField] private int _sliderMaxValue;
 
+
+    private void Start()
+    {
+        _slider.maxValue = _sliderMaxValue;
+    }
     public void DisplayCurrentWave(int waveNumer)
     {
         _waveText.text = "Wave " + waveNumer;
@@ -44,6 +53,11 @@ public class UIManager : MonoBehaviour
     public void DisplayCurrentWeapon(int weaponLevel, string weaponName)
     {
         _weaponLevelText.text = "Level " + weaponLevel + ": \n" + weaponName;
+    }
+
+    public void DisplayHealth(float health)
+    {
+        _slider.value = health + 1;
     }
 
     IEnumerator CloseModelWindow()
