@@ -33,9 +33,6 @@ public class UIManager : MonoBehaviour
     {
         _waveText.text = "Wave " + waveNumer;
         _waveMessageText.text = _waveMessages[waveNumer - 1];
-        //change text to wave + wavenumber
-        //change message to string array [-1 wave number]. string
-        //open model window
         _modal.OpenWindow();
         StartCoroutine(CloseModelWindow());
     }

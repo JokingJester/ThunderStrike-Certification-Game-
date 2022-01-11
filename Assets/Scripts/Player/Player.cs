@@ -47,12 +47,7 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private Transform _downTarget;
 
     [Header("Projectiles")]
-    [SerializeField] private GameObject _singleFireballPrefab;
-    [SerializeField] private GameObject _doubleFireballPrefab;
-    [SerializeField] private GameObject _tripleFireballPrefab;
-    [SerializeField] private GameObject _wavePrefab;
-    [SerializeField] private GameObject _bigFireballPrefab;
-    [SerializeField] private GameObject _chainFireballPrefab;
+    [SerializeField] private PlayerWeapon[] _playerWeapons;
 
     [Header("Shield And Explosion Prefab")]
     [SerializeField] private GameObject _shield;
@@ -106,27 +101,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Shoot()
     {
-        switch (_weaponLevel)
-        {
-            case 1:
-                _projectile = _singleFireballPrefab;
-                break;
-            case 2:
-                _projectile = _doubleFireballPrefab;
-                break;
-            case 3:
-                _projectile = _tripleFireballPrefab;
-                break;
-            case 4:
-                _projectile = _wavePrefab;
-                break;
-            case 5:
-                _projectile = _bigFireballPrefab;
-                break;
-            case 6:
-                _projectile = _chainFireballPrefab;
-                break;
-        }
+        _projectile = _playerWeapons[_weaponLevel - 1].projectile;
         if(_canFire < Time.time && _weaponLevel <= 4)
         {
             Instantiate(_projectile, transform.position + new Vector3(3f,-0.5f,0), Quaternion.identity);
@@ -146,7 +121,7 @@ public class Player : MonoBehaviour, IDamageable
         if(other.tag == "Powerup")
         {
             Destroy(other.gameObject);
-            if (_weaponLevel < 6)
+            if (_weaponLevel < _playerWeapons.Length)
             {
                 _weaponLevel++;
                 Health++;

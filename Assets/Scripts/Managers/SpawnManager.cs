@@ -18,7 +18,7 @@ public class SpawnManager : MonoBehaviour
     {
         UIManager.Instance.DisplayCurrentWave(_waveNumber);
         _spawnEnemies = true;
-        yield return new WaitForSeconds(6);
+        yield return new WaitForSeconds(7);
         while (_spawnEnemies == true)
         {
             if(_waves[_waveNumber - 1].waveData[_waveIndex].spawnWithNoEnemies == false)
