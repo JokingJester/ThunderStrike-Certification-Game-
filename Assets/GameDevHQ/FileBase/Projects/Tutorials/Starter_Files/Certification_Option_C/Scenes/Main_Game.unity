@@ -387,8 +387,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canSlowTime: 1
-  _health: 1
-  _weaponLevel: 1
+  _health: 2
+  _weaponLevel: 2
   _anim: {fileID: 285407785}
   _boxCollider: {fileID: 285407784}
   _camShake: {fileID: 963194229}
@@ -6055,7 +6055,7 @@ MonoBehaviour:
       playSpecificPattern: 0
       specificPattern: 0
     - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
-      spawnRate: 0.5
+      spawnRate: 3
       hasPowerup: 0
       spawnWithNoEnemies: 0
       bossFight: 0
@@ -6125,6 +6125,388 @@ MonoBehaviour:
       bossFight: 0
       playSpecificPattern: 0
       specificPattern: 1
+  - waveData:
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4630651605424755992, guid: 6eefbff3b4f113e4c8a058a4e8a80908, type: 3}
+      spawnRate: 1.5
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 1073710483572273415, guid: 52c3b0783082d6e448845632175fb8f5, type: 3}
+      spawnRate: 0
+      hasPowerup: 0
+      spawnWithNoEnemies: 1
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 1073710483572273415, guid: 52c3b0783082d6e448845632175fb8f5, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 1
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 0.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+  - waveData:
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 1073710483572273415, guid: 52c3b0783082d6e448845632175fb8f5, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 1
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 0
+    - enemyPrefab: {fileID: 1073710483572273415, guid: 52c3b0783082d6e448845632175fb8f5, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 1
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 3
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 2
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 2
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
+      spawnRate: 5.5
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
+      spawnRate: 5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 0
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4630651605424755992, guid: 6eefbff3b4f113e4c8a058a4e8a80908, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 2
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+  - waveData:
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 0
+    - enemyPrefab: {fileID: 2184232898500924977, guid: 684d7c504efaedc4da2b530946c77bb7, type: 3}
+      spawnRate: 0.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4630651605424755992, guid: 6eefbff3b4f113e4c8a058a4e8a80908, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 1
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 2184232898500924977, guid: 684d7c504efaedc4da2b530946c77bb7, type: 3}
+      spawnRate: 2.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 1
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 1.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 2
+    - enemyPrefab: {fileID: 1073710483572273415, guid: 52c3b0783082d6e448845632175fb8f5, type: 3}
+      spawnRate: 2
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
+      spawnRate: 2.5
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 6
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 2
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
+      spawnRate: 2
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 2184232898500924977, guid: 684d7c504efaedc4da2b530946c77bb7, type: 3}
+      spawnRate: 1.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 1
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 1
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+  - waveData:
+    - enemyPrefab: {fileID: 1073710483572273415, guid: 52c3b0783082d6e448845632175fb8f5, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 0
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 2
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 4
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 2184232898500924977, guid: 684d7c504efaedc4da2b530946c77bb7, type: 3}
+      spawnRate: 5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 0
+    - enemyPrefab: {fileID: 2184232898500924977, guid: 684d7c504efaedc4da2b530946c77bb7, type: 3}
+      spawnRate: 0.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 1
+    - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 3
+    - enemyPrefab: {fileID: 4630651605424755992, guid: 6eefbff3b4f113e4c8a058a4e8a80908, type: 3}
+      spawnRate: 4
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4165354542371385737, guid: 59a5a5329c1617847982e6745a1e0ad7, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 2
+      hasPowerup: 0
+      spawnWithNoEnemies: 1
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 2
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 1
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
+    - enemyPrefab: {fileID: 42607515113085003, guid: 4bee940d7d90f9f488552cc1697f55d1, type: 3}
+      spawnRate: 1.5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 1
+      specificPattern: 2
 --- !u!4 &982056814
 Transform:
   m_ObjectHideFlags: 0

@@ -28,6 +28,15 @@ public class Enemy : MonoBehaviour, IDamageable
             MeshRenderer mesh = GetComponent<MeshRenderer>();
             if (mesh != null)
                 mesh.material.color = Color.blue;
+            else
+            {
+                mesh = GetComponentInChildren<MeshRenderer>();
+                if(mesh != null)
+                {
+                    mesh.material.color = Color.blue;
+                }
+            }
+
         }
         Health = _health;
     }

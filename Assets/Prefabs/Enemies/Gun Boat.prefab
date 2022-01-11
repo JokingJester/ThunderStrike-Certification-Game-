@@ -140,7 +140,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 12
+  _health: 24
   _explosionScale: 5
   _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
   _powerup: {fileID: 5524877749592252342, guid: bf37cda97ddb64af990698ac79b80519, type: 3}
@@ -150,7 +150,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 8e16a04a505df47478ea0c81072d36e1, type: 2}
   - {fileID: 11400000, guid: 8e16a04a505df47478ea0c81072d36e1, type: 2}
   _rotation: {x: 100, y: 100, z: 100, w: -100}
-  _hasPowerup: 0
+  hasPowerup: 0
   hitByChainFireball: 0
 --- !u!54 &-542045049383162087
 Rigidbody:
