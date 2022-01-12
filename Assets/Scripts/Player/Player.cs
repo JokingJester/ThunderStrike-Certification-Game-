@@ -6,7 +6,10 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    private bool _takeDamage = true;
+    private bool _usedCheckpoint;
     private bool _playOnSlowedTimescale;
+
     private float _canFire = -1;
     private float _canFireUnscaled = -1;
 
@@ -27,7 +30,6 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Animator And Box Collider")]
     [SerializeField] private Animator _anim;
-    [SerializeField] private BoxCollider _boxCollider;
 
     [Header("Camera Shake")]
     [SerializeField] private CameraShake _camShake;
@@ -70,6 +72,7 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private AudioClip _loseMusic;
     [SerializeField] private AudioClip _hitSound;
 
+    [HideInInspector] public bool _canPause = true;
     public float Health { get; set; }
 
     private void Start()
@@ -175,7 +178,7 @@ public class Player : MonoBehaviour, IDamageable
         _playOnSlowedTimescale = true;
         if (_weaponLevel >= 6)
         {
-            _boxCollider.enabled = false;
+            _takeDamage = false;
             _shield.SetActive(true);
         }
 
@@ -185,8 +188,11 @@ public class Player : MonoBehaviour, IDamageable
         else
             yield return _increaseDuration;
         Time.timeScale = 1;
-        _boxCollider.enabled = true;
-        _shield.SetActive(false);
+        if(_weaponLevel == _playerWeapons.Length)
+        {
+            _takeDamage = true;
+            _shield.SetActive(false);
+        }
         if (_profile.profile.TryGetSettings<ChromaticAberration>(out chrom))
         {
             chrom.intensity.overrideState = true;
@@ -210,6 +216,8 @@ public class Player : MonoBehaviour, IDamageable
     public void Damage(float damageAmount)
     {
         AudioManager.Instance.PlayOneShot(_hitSound, 3f);
+        if (_takeDamage == false)
+            return;
         Health -= damageAmount;
         _weaponLevel--;
         _camShake.SetupCameraShake(0.4f, 0.4f);
@@ -218,11 +226,22 @@ public class Player : MonoBehaviour, IDamageable
             UIManager.Instance.DontShowQAbility();
         if(Health < 1)
         {
+            Time.timeScale = 1;
             Instantiate(_largeExplosion, transform.position, Quaternion.identity);
             this.gameObject.SetActive(false);
-            _loseCanvas.enabled = true;
-            AudioManager.Instance.ChangeClip(_loseMusic);
-            return;
+            _canPause = false;
+            if (_usedCheckpoint == false)
+            {
+                UIManager.Instance.OpenUseCheckpointWindow();
+                return;
+            }
+            else
+            {
+
+                UIManager.Instance.ShowLoseScreen();
+                AudioManager.Instance.ChangeClip(_loseMusic);
+                return;
+            }
         }
         UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
         UIManager.Instance.DisplayHealth(Health);
@@ -230,6 +249,8 @@ public class Player : MonoBehaviour, IDamageable
 
     public void TogglePause()
     {
+        if (_canPause == false)
+            return;
         _pauseCanvas.enabled = !_pauseCanvas.enabled;
 
         if (Time.timeScale == 1 || Time.timeScale == 0.3f)
@@ -241,5 +262,35 @@ public class Player : MonoBehaviour, IDamageable
             else
                 Time.timeScale = 0.3f;
         }
+    }
+
+    public void UseCheckpoint(bool useIt)
+    {
+        _usedCheckpoint = true;
+        if(useIt == true)
+        {
+            _canSlowTime = true;
+            Health = 2;
+            _weaponLevel = 2;
+            this.gameObject.SetActive(true);
+            UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
+            UIManager.Instance.DisplayHealth(Health);
+            UIManager.Instance.ShowQAbility();
+            _canPause = true;
+            StartCoroutine(TurnBoxColliderOnRoutine());
+        }
+        else
+        {
+            Damage(0);
+        }
+    }
+
+    IEnumerator TurnBoxColliderOnRoutine()
+    {
+        _takeDamage = false;
+        _shield.SetActive(true);
+        yield return new WaitForSeconds(7f);
+        _shield.SetActive(false);
+        _takeDamage = true;
     }
 }

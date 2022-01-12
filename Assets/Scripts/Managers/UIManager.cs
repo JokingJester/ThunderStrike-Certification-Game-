@@ -47,7 +47,12 @@ public class UIManager : MonoBehaviour
 
     [Header("Canvas")]
     [SerializeField] private Canvas _victoryCanvas;
+    [SerializeField] private Canvas _loseCanvas;
     [SerializeField] private TMP_Text _finalScoreText;
+
+    [Header("Use Checkpoint")]
+    [SerializeField] private ModalWindowManager _useCheckpointWindow;
+
 
 
     private void Start()
@@ -95,6 +100,16 @@ public class UIManager : MonoBehaviour
     {
         _finalScoreText.text = "Your final score is " + _score;
         _victoryCanvas.enabled = true;
+    }
+
+    public void OpenUseCheckpointWindow()
+    {
+        _useCheckpointWindow.OpenWindow();
+    }
+
+    public void ShowLoseScreen()
+    {
+        _loseCanvas.enabled = true;
     }
 
     IEnumerator CloseModelWindow()

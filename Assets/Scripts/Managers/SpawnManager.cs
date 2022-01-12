@@ -6,6 +6,7 @@ public class SpawnManager : MonoBehaviour
 {
     [SerializeField] private AudioClip _bossMusic;
     [SerializeField] private int _waveNumber = 1;
+    [SerializeField] private Player _player;
 
     private bool _spawnEnemies;
     private int _waveIndex;
@@ -104,6 +105,7 @@ public class SpawnManager : MonoBehaviour
                 else
                 {
                     yield return new WaitForSeconds(1.5f);
+                    _player._canPause = false;
                     AudioManager.Instance.PlayVictoryMusic();
                     UIManager.Instance.ShowVictoryCanvas();
                 }
