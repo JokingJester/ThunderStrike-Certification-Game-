@@ -1177,9 +1177,29 @@ PrefabInstance:
       propertyPath: m_TagString
       value: Player
       objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_StaticEditorFlags
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
       propertyPath: m_RootOrder
@@ -1313,6 +1333,7 @@ MonoBehaviour:
   _shield: {fileID: 1776232122}
   _largeExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
   _rotor: {fileID: 300988518}
+  _profile: {fileID: 1140564357}
 --- !u!54 &285407783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7516,7 +7537,7 @@ Camera:
   m_TargetTexture: {fileID: 0}
   m_TargetDisplay: 0
   m_TargetEye: 3
-  m_HDR: 1
+  m_HDR: 0
   m_AllowMSAA: 1
   m_AllowDynamicResolution: 0
   m_ForceIntoRT: 0
@@ -7639,7 +7660,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f07af17f364e64ead8bcf4969d0085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveNumber: 1
+  _waveNumber: 8
   _waves:
   - waveData:
     - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
@@ -20286,6 +20307,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4d77d669407d03447bf923fbe16a1d10, type: 3}
       propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d77d669407d03447bf923fbe16a1d10, type: 3}
+      propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 400000, guid: 4d77d669407d03447bf923fbe16a1d10, type: 3}

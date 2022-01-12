@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Rendering.PostProcessing;
 
 public class Player : MonoBehaviour, IDamageable
 {
@@ -55,6 +56,9 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Rotor")]
     [SerializeField] private Rotor _rotor;
+
+    [Header("Post Processing")]
+    [SerializeField] private PostProcessVolume _profile;
 
     public float Health { get; set; }
 
@@ -146,6 +150,12 @@ public class Player : MonoBehaviour, IDamageable
     IEnumerator SlowTimeRoutine()
     {
         UIManager.Instance.DontShowQAbility();
+        ChromaticAberration chrom;
+        if(_profile.profile.TryGetSettings<ChromaticAberration>(out chrom))
+        {
+            chrom.intensity.overrideState = true;
+            chrom.intensity.value = 0.25f;
+        }
         _canSlowTime = false;
 
         if (_weaponLevel >= 6)
@@ -162,6 +172,11 @@ public class Player : MonoBehaviour, IDamageable
         Time.timeScale = 1;
         _boxCollider.enabled = true;
         _shield.SetActive(false);
+        if (_profile.profile.TryGetSettings<ChromaticAberration>(out chrom))
+        {
+            chrom.intensity.overrideState = true;
+            chrom.intensity.value = 0;
+        }
         StartCoroutine(RechargeTimeAbilityRoutine());
     }
 
