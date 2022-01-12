@@ -17,22 +17,20 @@ public class Fireball : Projectile
     // Update is called once per frame
    public virtual void Update()
     {
-        if(_damagePlayer == false)
-            MoveUnscaled();
-        transform.Translate(Vector2.right * _speed * Time.deltaTime);
         if (transform.position.x >= 32)
             Destroy(this.gameObject);
-    }
 
-    protected void MoveUnscaled()
-    {
-        if (_player != null)
+        if (_damagePlayer == false)
         {
-            if (_player._weaponLevel >= 4)
+            if (_player != null)
             {
-                transform.Translate(Vector2.right * _speed * Time.unscaledDeltaTime);
-                return;
+                if (_player._weaponLevel >= 5)
+                {
+                    transform.Translate(Vector2.right * _speed * Time.unscaledDeltaTime);
+                    return;
+                }
             }
         }
+        transform.Translate(Vector2.right * _speed * Time.deltaTime);
     }
 }
