@@ -150,6 +150,8 @@ public class Player : MonoBehaviour, IDamageable
             UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
             UIManager.Instance.DisplayHealth(Health);
             UIManager.Instance.AddScore(16);
+            if (_weaponLevel == _playerWeapons.Length)
+                UIManager.Instance.AddScore(100);
             AudioManager.Instance.PlayOneShot(_powerupSound, 0.6f);
         }
     }
