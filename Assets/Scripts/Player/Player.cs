@@ -127,6 +127,8 @@ public class Player : MonoBehaviour, IDamageable
             {
                 _weaponLevel++;
                 Health++;
+                if (_canSlowTime == true && _weaponLevel == 2)
+                    UIManager.Instance.ShowQAbility();
             }
             _anim.SetTrigger("Powerup");
             UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
@@ -143,6 +145,7 @@ public class Player : MonoBehaviour, IDamageable
 
     IEnumerator SlowTimeRoutine()
     {
+        UIManager.Instance.DontShowQAbility();
         _canSlowTime = false;
 
         if (_weaponLevel >= 6)
@@ -169,6 +172,8 @@ public class Player : MonoBehaviour, IDamageable
         else
             yield return _decreasedRechargeRate;
         _canSlowTime = true;
+        if(_weaponLevel != 1)
+            UIManager.Instance.ShowQAbility();
     }
 
     public void Damage(float damageAmount)
@@ -176,6 +181,9 @@ public class Player : MonoBehaviour, IDamageable
         Health -= damageAmount;
         _weaponLevel--;
         _camShake.SetupCameraShake(0.4f, 0.4f);
+
+        if (_weaponLevel == 1)
+            UIManager.Instance.DontShowQAbility();
         if(Health < 1)
         {
             Instantiate(_largeExplosion, transform.position, Quaternion.identity);

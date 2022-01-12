@@ -41,6 +41,10 @@ public class UIManager : MonoBehaviour
     [Header("Score UI")]
     [SerializeField] private TMP_Text _scoreText;
 
+    [Header("Slow Time UI")]
+    [SerializeField] private GameObject _pressQ;
+    [SerializeField] private GameObject _waitIcon;
+
 
     private void Start()
     {
@@ -69,6 +73,18 @@ public class UIManager : MonoBehaviour
     {
         _score += score;
         _scoreText.text = "Score: " + _score;
+    }
+
+    public void ShowQAbility()
+    {
+        _waitIcon.SetActive(false);
+        _pressQ.SetActive(true);
+    }
+
+    public void DontShowQAbility()
+    {
+        _waitIcon.SetActive(true);
+        _pressQ.SetActive(false);
     }
 
     IEnumerator CloseModelWindow()
