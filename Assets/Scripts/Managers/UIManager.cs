@@ -45,6 +45,10 @@ public class UIManager : MonoBehaviour
     [SerializeField] private GameObject _pressQ;
     [SerializeField] private GameObject _waitIcon;
 
+    [Header("Canvas")]
+    [SerializeField] private Canvas _victoryCanvas;
+    [SerializeField] private TMP_Text _finalScoreText;
+
 
     private void Start()
     {
@@ -61,8 +65,6 @@ public class UIManager : MonoBehaviour
 
     public void DisplayCurrentWeapon(int weaponLevel, string weaponName)
     {
-        if (weaponLevel < 1)
-            return;
         _weaponLevelText.text = "Level " + weaponLevel + ": \n" + weaponName;
     }
 
@@ -87,6 +89,12 @@ public class UIManager : MonoBehaviour
     {
         _waitIcon.SetActive(true);
         _pressQ.SetActive(false);
+    }
+
+    public void ShowVictoryCanvas()
+    {
+        _finalScoreText.text = "Your final score is " + _score;
+        _victoryCanvas.enabled = true;
     }
 
     IEnumerator CloseModelWindow()

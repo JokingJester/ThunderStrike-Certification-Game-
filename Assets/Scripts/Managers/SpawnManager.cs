@@ -105,6 +105,7 @@ public class SpawnManager : MonoBehaviour
                 {
                     yield return new WaitForSeconds(1.5f);
                     AudioManager.Instance.PlayVictoryMusic();
+                    UIManager.Instance.ShowVictoryCanvas();
                 }
             }
         }
