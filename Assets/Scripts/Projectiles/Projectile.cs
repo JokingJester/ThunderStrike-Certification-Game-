@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    [HideInInspector] public bool _canDamage = true;
     [SerializeField] protected GameObject _smallExplosion;
     [SerializeField] protected bool _damagePlayer;
     [SerializeField] protected float _damageAmount;
@@ -24,11 +25,14 @@ public class Projectile : MonoBehaviour
         if(other.tag == "Enemy" && _damagePlayer == false)
         {
             AudioManager.Instance.PlayOneShot(_hitSound, _hitSoundVolume);
+            if(_smallExplosion != null)
+                Instantiate(_smallExplosion, transform.position, Quaternion.identity);
+            if (_canDamage == false)
+                return;
             IDamageable damage = other.GetComponent<IDamageable>();
             if (damage != null)
                 damage.Damage(_damageAmount);
-            if(_smallExplosion != null)
-                Instantiate(_smallExplosion, transform.position, Quaternion.identity);
+
             Destroy(this.gameObject);
         }
 
