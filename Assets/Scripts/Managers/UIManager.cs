@@ -61,6 +61,8 @@ public class UIManager : MonoBehaviour
 
     public void DisplayCurrentWeapon(int weaponLevel, string weaponName)
     {
+        if (weaponLevel < 1)
+            return;
         _weaponLevelText.text = "Level " + weaponLevel + ": \n" + weaponName;
     }
 

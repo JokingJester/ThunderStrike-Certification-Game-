@@ -33,7 +33,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private CameraShake _camShake;
 
     [Header("Pause Canvas")]
-    [SerializeField] private Canvas _canvas;
+    [SerializeField] private Canvas _pauseCanvas;
+    [SerializeField] private Canvas _loseCanvas;
 
     [Header("Speeds")]
     [SerializeField] private float _speed;
@@ -66,6 +67,7 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Audio")]
     [SerializeField] private AudioClip _powerupSound;
+    [SerializeField] private AudioClip _loseMusic;
 
     public float Health { get; set; }
 
@@ -211,7 +213,10 @@ public class Player : MonoBehaviour, IDamageable
         if(Health < 1)
         {
             Instantiate(_largeExplosion, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
+            _loseCanvas.enabled = true;
+            AudioManager.Instance.ChangeClip(_loseMusic);
+            return;
         }
         UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
         UIManager.Instance.DisplayHealth(Health);
@@ -219,7 +224,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void TogglePause()
     {
-        _canvas.enabled = !_canvas.enabled;
+        _pauseCanvas.enabled = !_pauseCanvas.enabled;
 
         if (Time.timeScale == 1 || Time.timeScale == 0.3f)
             Time.timeScale = 0;
