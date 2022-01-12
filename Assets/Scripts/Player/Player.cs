@@ -6,6 +6,7 @@ using UnityEngine.Rendering.PostProcessing;
 
 public class Player : MonoBehaviour, IDamageable
 {
+    private bool _playOnSlowedTimescale;
     private float _canFire = -1;
     private float _canFireUnscaled = -1;
 
@@ -30,6 +31,9 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Camera Shake")]
     [SerializeField] private CameraShake _camShake;
+
+    [Header("Pause Canvas")]
+    [SerializeField] private Canvas _canvas;
 
     [Header("Speeds")]
     [SerializeField] private float _speed;
@@ -161,7 +165,7 @@ public class Player : MonoBehaviour, IDamageable
             chrom.intensity.value = 0.25f;
         }
         _canSlowTime = false;
-
+        _playOnSlowedTimescale = true;
         if (_weaponLevel >= 6)
         {
             _boxCollider.enabled = false;
@@ -181,6 +185,7 @@ public class Player : MonoBehaviour, IDamageable
             chrom.intensity.overrideState = true;
             chrom.intensity.value = 0;
         }
+        _playOnSlowedTimescale = false;
         StartCoroutine(RechargeTimeAbilityRoutine());
     }
 
@@ -210,5 +215,20 @@ public class Player : MonoBehaviour, IDamageable
         }
         UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
         UIManager.Instance.DisplayHealth(Health);
+    }
+
+    public void TogglePause()
+    {
+        _canvas.enabled = !_canvas.enabled;
+
+        if (Time.timeScale == 1 || Time.timeScale == 0.3f)
+            Time.timeScale = 0;
+        else
+        {
+            if (_playOnSlowedTimescale == false)
+                Time.timeScale = 1;
+            else
+                Time.timeScale = 0.3f;
+        }
     }
 }

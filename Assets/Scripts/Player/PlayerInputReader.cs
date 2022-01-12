@@ -12,6 +12,12 @@ public class PlayerInputReader : MonoBehaviour
         _input = new GameInputs();
         _input.Player.Enable();
         _input.Player.SlowTime.performed += SlowTime_performed;
+        _input.Player.Pause.performed += Pause_performed;
+    }
+
+    private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
+    {
+        _player.TogglePause();
     }
 
     private void SlowTime_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
@@ -30,5 +36,6 @@ public class PlayerInputReader : MonoBehaviour
     private void OnDisable()
     {
         _input.Player.SlowTime.performed -= SlowTime_performed;
+        _input.Player.Pause.performed -= Pause_performed;
     }
 }
