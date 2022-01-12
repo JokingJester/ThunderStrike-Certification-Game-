@@ -4,8 +4,10 @@ using UnityEngine;
 
 public class SpawnManager : MonoBehaviour
 {
+    [SerializeField] private AudioClip _bossMusic;
+    [SerializeField] private int _waveNumber = 1;
+
     private bool _spawnEnemies;
-    [SerializeField]private int _waveNumber = 1;
     private int _waveIndex;
     public Wave[] _waves;
     // Start is called before the first frame update
@@ -21,6 +23,11 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(7);
         while (_spawnEnemies == true)
         {
+            if(_waves[_waveNumber - 1].waveData[_waveIndex].bossFight == true)
+            {
+                AudioManager.Instance.ChangeClip(_bossMusic);
+            }
+
             if(_waves[_waveNumber - 1].waveData[_waveIndex].spawnWithNoEnemies == false)
             {
                 yield return new WaitForSeconds(_waves[_waveNumber - 1].waveData[_waveIndex].spawnRate);
@@ -91,10 +98,14 @@ public class SpawnManager : MonoBehaviour
                     _waveNumber++;
                     _waveIndex = 0;
                     yield return new WaitForSeconds(1.5f);
+                    AudioManager.Instance.ChangeToRegularMusic();
                     StartCoroutine(SpawnRoutine());
                 }
                 else
-                    Debug.Log("VICTory");
+                {
+                    yield return new WaitForSeconds(1.5f);
+                    AudioManager.Instance.PlayVictoryMusic();
+                }
             }
         }
     }

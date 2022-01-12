@@ -481,11 +481,11 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 0}
+  m_audioClip: {fileID: 8300000, guid: b4c2a4c96eb1b1c4e94dcb5db4d45de2, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
-  Loop: 0
+  Loop: 1
   Mute: 0
   Spatialize: 0
   SpatializePostEffects: 0
@@ -580,6 +580,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 95828175}
+  _regularMusic: {fileID: 8300000, guid: b4c2a4c96eb1b1c4e94dcb5db4d45de2, type: 3}
+  _victoryMusic: {fileID: 8300000, guid: d72ed01aa34dc4a078b58117ac8827f2, type: 3}
 --- !u!1 &151559059
 GameObject:
   m_ObjectHideFlags: 0
@@ -7801,7 +7803,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 12f07af17f364e64ead8bcf4969d0085, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _waveNumber: 1
+  _bossMusic: {fileID: 8300000, guid: 32d36c25bc878498baecca74e4fb719f, type: 3}
+  _waveNumber: 12
   _waves:
   - waveData:
     - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}
@@ -8249,7 +8252,7 @@ MonoBehaviour:
       spawnRate: 1
       hasPowerup: 0
       spawnWithNoEnemies: 0
-      bossFight: 0
+      bossFight: 1
       playSpecificPattern: 0
       specificPattern: 0
     - enemyPrefab: {fileID: 2069205526312188134, guid: 2d8480c8ac14ce9458f3aaf244e91639, type: 3}
@@ -14452,7 +14455,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 0, y: 0}
-  m_AnchoredPosition: {x: 0, y: 0}
+  m_AnchoredPosition: {x: 250, y: 0}
   m_SizeDelta: {x: 0, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!1 &1300541629

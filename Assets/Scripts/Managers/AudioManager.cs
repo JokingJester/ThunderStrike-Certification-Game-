@@ -14,8 +14,10 @@ public class AudioManager : MonoBehaviour
             return _instance;
         }
     }
-
-    [SerializeField] private AudioSource _audioSource;
+    
+    public AudioSource _audioSource;
+    [SerializeField] private AudioClip _regularMusic;
+    [SerializeField] private AudioClip _victoryMusic;
 
     private void Awake()
     {
@@ -31,5 +33,17 @@ public class AudioManager : MonoBehaviour
     public void PlayOneShot(AudioClip clip, float volume)
     {
         _audioSource.PlayOneShot(clip, volume);
+    }
+
+    public void ChangeToRegularMusic()
+    {
+        if (_audioSource.clip == _regularMusic)
+            return;
+        ChangeClip(_regularMusic);
+    }
+
+    public void PlayVictoryMusic()
+    {
+        ChangeClip(_victoryMusic);
     }
 }
