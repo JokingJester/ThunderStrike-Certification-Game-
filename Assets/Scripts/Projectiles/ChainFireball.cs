@@ -46,7 +46,7 @@ public class ChainFireball : Fireball
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
         if(allEnemies.Length >=2)
-            AudioManager.Instance.PlayOneShot(_richochetSound, _volume);
+            AudioManager.Instance.PlayOneShot(_richochetSound, _volume + 1);
         if (allEnemies.Length >= 1)
         {
             float minimumDistance = Mathf.Infinity;

@@ -14,7 +14,6 @@ public class Projectile : MonoBehaviour
 
     public virtual void Start()
     {
-        Debug.Log("TUSKEN USkCe");
         AudioManager.Instance.PlayOneShot(_sound, _volume);
     }
 
