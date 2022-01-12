@@ -481,7 +481,7 @@ AudioSource:
   m_Enabled: 1
   serializedVersion: 4
   OutputAudioMixerGroup: {fileID: 0}
-  m_audioClip: {fileID: 8300000, guid: b4c2a4c96eb1b1c4e94dcb5db4d45de2, type: 3}
+  m_audioClip: {fileID: 8300000, guid: 98f0ec0bbb0b7544d9591019dd35d5e3, type: 3}
   m_PlayOnAwake: 1
   m_Volume: 1
   m_Pitch: 1
@@ -580,7 +580,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _audioSource: {fileID: 95828175}
-  _regularMusic: {fileID: 8300000, guid: b4c2a4c96eb1b1c4e94dcb5db4d45de2, type: 3}
+  _regularMusic: {fileID: 8300000, guid: 98f0ec0bbb0b7544d9591019dd35d5e3, type: 3}
   _victoryMusic: {fileID: 8300000, guid: d72ed01aa34dc4a078b58117ac8827f2, type: 3}
 --- !u!1 &151559059
 GameObject:
@@ -1477,6 +1477,7 @@ MonoBehaviour:
   _largeExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
   _rotor: {fileID: 300988518}
   _profile: {fileID: 1140564357}
+  _powerupSound: {fileID: 8300000, guid: ea9d72d201965df45b990e24e6ebaf03, type: 3}
 --- !u!54 &285407783
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -7804,7 +7805,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _bossMusic: {fileID: 8300000, guid: 32d36c25bc878498baecca74e4fb719f, type: 3}
-  _waveNumber: 12
+  _waveNumber: 9
   _waves:
   - waveData:
     - enemyPrefab: {fileID: 4739860309625556464, guid: b1d86b2c3bed93f4782bf3f93339abba, type: 3}

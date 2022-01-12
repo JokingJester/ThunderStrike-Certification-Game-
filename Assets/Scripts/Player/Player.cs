@@ -60,6 +60,9 @@ public class Player : MonoBehaviour, IDamageable
     [Header("Post Processing")]
     [SerializeField] private PostProcessVolume _profile;
 
+    [Header("Audio")]
+    [SerializeField] private AudioClip _powerupSound;
+
     public float Health { get; set; }
 
     private void Start()
@@ -138,6 +141,7 @@ public class Player : MonoBehaviour, IDamageable
             UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
             UIManager.Instance.DisplayHealth(Health);
             UIManager.Instance.AddScore(16);
+            AudioManager.Instance.PlayOneShot(_powerupSound, 0.6f);
         }
     }
 

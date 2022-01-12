@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class ChainFireball : Fireball
 {
+    [SerializeField] private AudioClip _richochetSound;
     private int _enemiesHit;
     private Transform _enemyTarget;
     public override void Update()
@@ -43,6 +44,9 @@ public class ChainFireball : Fireball
     {
         yield return null;
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
+
+        if(allEnemies.Length >=2)
+            AudioManager.Instance.PlayOneShot(_richochetSound, _volume);
         if (allEnemies.Length >= 1)
         {
             float minimumDistance = Mathf.Infinity;

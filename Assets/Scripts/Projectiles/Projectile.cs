@@ -8,6 +8,16 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected bool _damagePlayer;
     [SerializeField] protected float _damageAmount;
 
+    [Header("Audio")]
+    [SerializeField] protected AudioClip _sound;
+    [SerializeField] protected float _volume;
+
+    public virtual void Start()
+    {
+        Debug.Log("TUSKEN USkCe");
+        AudioManager.Instance.PlayOneShot(_sound, _volume);
+    }
+
     public virtual void OnTriggerEnter(Collider other)
     {
         if(other.tag == "Enemy" && _damagePlayer == false)
@@ -15,7 +25,8 @@ public class Projectile : MonoBehaviour
             IDamageable damage = other.GetComponent<IDamageable>();
             if (damage != null)
                 damage.Damage(_damageAmount);
-            Instantiate(_smallExplosion, transform.position, Quaternion.identity);
+            if(_smallExplosion != null)
+                Instantiate(_smallExplosion, transform.position, Quaternion.identity);
             Destroy(this.gameObject);
         }
 
