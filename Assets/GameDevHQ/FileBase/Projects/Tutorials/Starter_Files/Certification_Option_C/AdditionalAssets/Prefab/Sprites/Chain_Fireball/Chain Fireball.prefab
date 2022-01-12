@@ -164,6 +164,8 @@ MonoBehaviour:
   _damagePlayer: 0
   _damageAmount: 4
   _sound: {fileID: 8300000, guid: 8d771cb49d85ff746b2274b431862b66, type: 3}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   _volume: 1
+  _hitSoundVolume: 1.7
   _speed: 50
   _richochetSound: {fileID: 8300000, guid: c9b011ddee5ff924c989cecbd3097400, type: 3}

@@ -120,7 +120,9 @@ MonoBehaviour:
   _damagePlayer: 0
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: 422453fec52557f45836160d02f0a48a, type: 3}
-  _volume: 1
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
+  _volume: 0.7
+  _hitSoundVolume: 1
   _speed: 40
 --- !u!65 &3364589181914162412
 BoxCollider:
@@ -301,7 +303,9 @@ MonoBehaviour:
   _damagePlayer: 0
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: 422453fec52557f45836160d02f0a48a, type: 3}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   _volume: 1
+  _hitSoundVolume: 1
   _speed: 40
 --- !u!65 &602344014218410469
 BoxCollider:

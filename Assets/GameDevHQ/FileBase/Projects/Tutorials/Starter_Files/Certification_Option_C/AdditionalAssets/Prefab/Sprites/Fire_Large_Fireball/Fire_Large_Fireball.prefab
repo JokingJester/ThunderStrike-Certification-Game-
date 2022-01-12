@@ -62,7 +62,9 @@ MonoBehaviour:
   _damagePlayer: 0
   _damageAmount: 4
   _sound: {fileID: 8300000, guid: f53cddee631f08e43a881e844f9b2ef7, type: 3}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   _volume: 2
+  _hitSoundVolume: 1.7
   _speed: 50
 --- !u!1 &7979065151476118707
 GameObject:

@@ -148,7 +148,9 @@ MonoBehaviour:
   _damagePlayer: 0
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: 422453fec52557f45836160d02f0a48a, type: 3}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   _volume: 0.7
+  _hitSoundVolume: 1
   _speed: 40
 --- !u!95 &2254157133618666682
 Animator:
@@ -283,7 +285,9 @@ MonoBehaviour:
   _damagePlayer: 0
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: 422453fec52557f45836160d02f0a48a, type: 3}
-  _volume: 0.7
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
+  _volume: 1
+  _hitSoundVolume: 1
   _speed: 40
 --- !u!95 &8705466629131616394
 Animator:
@@ -418,7 +422,9 @@ MonoBehaviour:
   _damagePlayer: 0
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: 422453fec52557f45836160d02f0a48a, type: 3}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   _volume: 0.7
+  _hitSoundVolume: 1
   _speed: 40
 --- !u!95 &3014613922648520387
 Animator:

@@ -99,6 +99,7 @@ MonoBehaviour:
   _damagePlayer: 1
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: 427c0a3ff1636284586a0d70ddca47e0, type: 3}
+  _hitSound: {fileID: 0}
   _volume: 1.5
   _speed: 64
 --- !u!65 &8142932588410829608

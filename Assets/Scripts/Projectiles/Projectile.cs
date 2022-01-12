@@ -10,7 +10,9 @@ public class Projectile : MonoBehaviour
 
     [Header("Audio")]
     [SerializeField] protected AudioClip _sound;
+    [SerializeField] protected AudioClip _hitSound;
     [SerializeField] protected float _volume;
+    [SerializeField] protected float _hitSoundVolume;
 
     public virtual void Start()
     {
@@ -21,6 +23,7 @@ public class Projectile : MonoBehaviour
     {
         if(other.tag == "Enemy" && _damagePlayer == false)
         {
+            AudioManager.Instance.PlayOneShot(_hitSound, _hitSoundVolume);
             IDamageable damage = other.GetComponent<IDamageable>();
             if (damage != null)
                 damage.Damage(_damageAmount);

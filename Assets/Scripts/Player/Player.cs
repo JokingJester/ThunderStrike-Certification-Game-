@@ -68,6 +68,7 @@ public class Player : MonoBehaviour, IDamageable
     [Header("Audio")]
     [SerializeField] private AudioClip _powerupSound;
     [SerializeField] private AudioClip _loseMusic;
+    [SerializeField] private AudioClip _hitSound;
 
     public float Health { get; set; }
 
@@ -116,6 +117,8 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Shoot()
     {
+        if (_weaponLevel < 1)
+            return;
         _projectile = _playerWeapons[_weaponLevel - 1].projectile;
         if(_canFire < Time.time && _weaponLevel <= 4)
         {
@@ -204,6 +207,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount)
     {
+        AudioManager.Instance.PlayOneShot(_hitSound, 3f);
         Health -= damageAmount;
         _weaponLevel--;
         _camShake.SetupCameraShake(0.4f, 0.4f);
