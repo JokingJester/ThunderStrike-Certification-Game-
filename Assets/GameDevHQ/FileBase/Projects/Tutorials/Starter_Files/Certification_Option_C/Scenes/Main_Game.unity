@@ -11261,6 +11261,13 @@ MonoBehaviour:
       bossFight: 0
       playSpecificPattern: 1
       specificPattern: 1
+    - enemyPrefab: {fileID: 5524877749592252342, guid: bf37cda97ddb64af990698ac79b80519, type: 3}
+      spawnRate: 1
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 0
     - enemyPrefab: {fileID: 4187396067377098446, guid: badc7a8ba482add4699fdb4790d4412c, type: 3}
       spawnRate: 1
       hasPowerup: 0
@@ -11339,8 +11346,22 @@ MonoBehaviour:
       bossFight: 1
       playSpecificPattern: 0
       specificPattern: 0
+    - enemyPrefab: {fileID: 5524877749592252342, guid: bf37cda97ddb64af990698ac79b80519, type: 3}
+      spawnRate: 4
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 1
     - enemyPrefab: {fileID: 2069205526312188134, guid: 2d8480c8ac14ce9458f3aaf244e91639, type: 3}
       spawnRate: 5
+      hasPowerup: 0
+      spawnWithNoEnemies: 0
+      bossFight: 0
+      playSpecificPattern: 0
+      specificPattern: 1
+    - enemyPrefab: {fileID: 5524877749592252342, guid: bf37cda97ddb64af990698ac79b80519, type: 3}
+      spawnRate: 4
       hasPowerup: 0
       spawnWithNoEnemies: 0
       bossFight: 0
@@ -11532,7 +11553,7 @@ MonoBehaviour:
       playSpecificPattern: 1
       specificPattern: 0
     - enemyPrefab: {fileID: 2184232898500924977, guid: 684d7c504efaedc4da2b530946c77bb7, type: 3}
-      spawnRate: 0.5
+      spawnRate: 3
       hasPowerup: 0
       spawnWithNoEnemies: 0
       bossFight: 0
@@ -16917,6 +16938,7 @@ GameObject:
   - component: {fileID: 1041109796}
   - component: {fileID: 1041109798}
   - component: {fileID: 1041109797}
+  - component: {fileID: 1041109799}
   m_Layer: 5
   m_Name: Final Score Text
   m_TagString: Untagged
@@ -17040,6 +17062,25 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1041109795}
   m_CullTransparentMesh: 1
+--- !u!95 &1041109799
+Animator:
+  serializedVersion: 3
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1041109795}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: cded725d87b9dd04583e667d311fdfd8, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorControllerStateOnDisable: 0
 --- !u!1 &1085441418
 GameObject:
   m_ObjectHideFlags: 0

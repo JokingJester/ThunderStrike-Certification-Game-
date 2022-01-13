@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3517628329040794999}
   - component: {fileID: 2227840659213593537}
   - component: {fileID: 1116828462363563541}
+  - component: {fileID: 253225499958844604}
   m_Layer: 0
   m_Name: Enemy_Fire_Double
   m_TagString: Untagged
@@ -46,11 +47,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 0735d48320c128242a5ccc98bb9ee231, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _canDamage: 1
   _smallExplosion: {fileID: 4494989596756331637, guid: 430bb0f08d3e947afb7152f639b6dcdc, type: 3}
   _damagePlayer: 1
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: fdadf760a314bc04c837cace20f8cc48, type: 3}
+  _hitSound: {fileID: 0}
   _volume: 1.5
+  _hitSoundVolume: 0
   _speed: -57
 --- !u!65 &1116828462363563541
 BoxCollider:
@@ -65,6 +69,19 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8432022, y: 2.171755, z: 1}
   m_Center: {x: 0.17553979, y: 0.5858774, z: 0}
+--- !u!114 &253225499958844604
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3517628329040794998}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: b9b4a00475cf4504da48a7d7b1a001ba, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  _time: 4
 --- !u!1001 &3517628327529868730
 PrefabInstance:
   m_ObjectHideFlags: 0
