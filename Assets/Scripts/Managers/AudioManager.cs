@@ -24,6 +24,11 @@ public class AudioManager : MonoBehaviour
         _instance = this;
     }
 
+    private void Start()
+    {
+        _audioSource.volume = MainMenu.audioVolume;
+    }
+
     public void ChangeClip(AudioClip clip)
     {
         _audioSource.clip = clip;
