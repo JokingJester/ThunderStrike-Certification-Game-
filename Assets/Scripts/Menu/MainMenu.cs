@@ -7,15 +7,18 @@ using UnityEngine.UI;
 public class MainMenu : MonoBehaviour
 {
     [SerializeField] private Slider _volumeSlider;
+    [SerializeField] private Slider _brightnessSlider;
     [Header("Audio")]
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip _clickSound;
 
     public static float audioVolume = 0.5f;
+    public static float brightness = 1f;
 
     private void Start()
     {
         _volumeSlider.value = audioVolume;
+        _brightnessSlider.value = brightness;
     }
     public void StartGame()
     {
@@ -28,7 +31,7 @@ public class MainMenu : MonoBehaviour
 
     public void AdjustBrightness()
     {
-       //effect directional light
+        brightness = _brightnessSlider.value;
     }
 
     public void PlayClickSound()

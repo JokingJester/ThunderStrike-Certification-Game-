@@ -658,7 +658,7 @@ GameObject:
   - component: {fileID: 606210690}
   - component: {fileID: 606210689}
   m_Layer: 5
-  m_Name: Slider - Gradient (Popup)
+  m_Name: Volume Slider
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1883,6 +1883,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _volumeSlider: {fileID: 606210690}
+  _brightnessSlider: {fileID: 1608768432}
   _source: {fileID: 1880937397}
   _clickSound: {fileID: 8300000, guid: a7c370641404bde419f24c95aa125f2e, type: 3}
 --- !u!1 &1374818345
@@ -2577,8 +2578,8 @@ MonoBehaviour:
   m_FillRect: {fileID: 1224229552}
   m_HandleRect: {fileID: 568928635}
   m_Direction: 0
-  m_MinValue: 0
-  m_MaxValue: 1
+  m_MinValue: 0.5
+  m_MaxValue: 1.5
   m_WholeNumbers: 0
   m_Value: 0.5
   m_OnValueChanged:
@@ -2586,7 +2587,7 @@ MonoBehaviour:
       m_Calls:
       - m_Target: {fileID: 1311696646}
         m_TargetAssemblyTypeName: MainMenu, Assembly-CSharp
-        m_MethodName: AdjustAmbientLight
+        m_MethodName: AdjustBrightness
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}

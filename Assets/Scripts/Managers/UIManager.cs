@@ -53,10 +53,14 @@ public class UIManager : MonoBehaviour
     [Header("Use Checkpoint")]
     [SerializeField] private ModalWindowManager _useCheckpointWindow;
 
+    [Header("Directional Light")]
+    [SerializeField] Light _directionalLight;
+
 
 
     private void Start()
     {
+        _directionalLight.intensity = MainMenu.brightness;
         _slider.maxValue = _sliderMaxValue;
         AddScore(0);
     }
