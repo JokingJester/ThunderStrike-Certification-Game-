@@ -21,6 +21,7 @@ public class Player : MonoBehaviour, IDamageable
     private WaitForSeconds _increaseDuration;
     private WaitForSeconds _regRechargeRate;
     private WaitForSeconds _decreasedRechargeRate;
+    private WaitForSeconds _immunitySeconds;
 
     [HideInInspector] public bool _canSlowTime = true;
 
@@ -84,6 +85,7 @@ public class Player : MonoBehaviour, IDamageable
         _increaseDuration = new WaitForSeconds(_increasedDuration);
         _regRechargeRate = new WaitForSeconds(_defaultRechargeDuration);
         _decreasedRechargeRate = new WaitForSeconds(_decreasedRechargeDuration);
+        _immunitySeconds = new WaitForSeconds(7);
     }
     public void Movement(Vector2 direction)
     {
@@ -277,7 +279,7 @@ public class Player : MonoBehaviour, IDamageable
             UIManager.Instance.DisplayHealth(Health);
             UIManager.Instance.ShowQAbility();
             _canPause = true;
-            StartCoroutine(TurnBoxColliderOnRoutine());
+            StartCoroutine(ToggleImunnity());
         }
         else
         {
@@ -285,11 +287,11 @@ public class Player : MonoBehaviour, IDamageable
         }
     }
 
-    IEnumerator TurnBoxColliderOnRoutine()
+    IEnumerator ToggleImunnity()
     {
         _takeDamage = false;
         _shield.SetActive(true);
-        yield return new WaitForSeconds(7f);
+        yield return _immunitySeconds;
         _shield.SetActive(false);
         _takeDamage = true;
     }
