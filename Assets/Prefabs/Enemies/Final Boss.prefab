@@ -140,9 +140,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 01fe75b4c37c1df48bb024aa64c7d5b7, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _health: 156
-  _explosionScale: 0
-  _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
+  _health: 160
+  _explosionScale: 1.5
+  _bigExplosion: {fileID: 413569030108832374, guid: 6d854a6d05c50764ba5a49119d9c86b2, type: 3}
   _powerup: {fileID: 0}
   _director: {fileID: 1708484794}
   _assets:
