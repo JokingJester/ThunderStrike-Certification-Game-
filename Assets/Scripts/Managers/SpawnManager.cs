@@ -24,15 +24,16 @@ public class SpawnManager : MonoBehaviour
         yield return new WaitForSeconds(7);
         while (_spawnEnemies == true)
         {
-            if(_waves[_waveNumber - 1].waveData[_waveIndex].bossFight == true)
-            {
-                AudioManager.Instance.ChangeClip(_bossMusic);
-            }
 
             if(_waves[_waveNumber - 1].waveData[_waveIndex].spawnWithNoEnemies == false)
             {
                 yield return new WaitForSeconds(_waves[_waveNumber - 1].waveData[_waveIndex].spawnRate);
                 GameObject enemy = Instantiate(_waves[_waveNumber - 1].waveData[_waveIndex].enemyPrefab);
+
+                if (_waves[_waveNumber - 1].waveData[_waveIndex].bossFight == true)
+                {
+                    AudioManager.Instance.ChangeClip(_bossMusic);
+                }
 
                 if (_waves[_waveNumber - 1].waveData[_waveIndex].hasPowerup == true || _waves[_waveNumber - 1].waveData[_waveIndex].playSpecificPattern == true)
                 {
