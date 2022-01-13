@@ -25,7 +25,6 @@ public class UIManager : MonoBehaviour
     }
 
     private int _score;
-    private WaitForSeconds _closeWindowSeconds;
     [Header("Waves UI")]
     [SerializeField] private string[] _waveMessages;
     [SerializeField] private TMP_Text _waveText;
@@ -61,7 +60,6 @@ public class UIManager : MonoBehaviour
 
     private void Start()
     {
-        _closeWindowSeconds = new WaitForSeconds(5f);
         _directionalLight.intensity = MainMenu.brightness;
         _slider.maxValue = _sliderMaxValue;
         AddScore(0);
@@ -120,7 +118,7 @@ public class UIManager : MonoBehaviour
 
     IEnumerator CloseModelWindow()
     {
-        yield return _closeWindowSeconds;
+        yield return new WaitForSeconds(5);
         _modal.CloseWindow();
     }
 }

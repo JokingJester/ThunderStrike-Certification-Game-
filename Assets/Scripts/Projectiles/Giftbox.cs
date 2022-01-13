@@ -5,11 +5,9 @@ using UnityEngine;
 public class Giftbox : FinalBossBomb
 {
     [SerializeField] private GameObject _bombs;
-    private WaitForSeconds _bombRoutineSeconds;
     public override void Start()
     {
         base.Start();
-        _bombRoutineSeconds = new WaitForSeconds(1.5f);
         int randomNumber = Random.Range(1, 3);
         if (randomNumber == 1)
             _direction = DirectionToMove.Up;
@@ -23,7 +21,7 @@ public class Giftbox : FinalBossBomb
 
     IEnumerator SpawnGiftRoutine()
     {
-        yield return _bombRoutineSeconds;
+        yield return new WaitForSeconds(1.5f);
         Instantiate(_bombs, transform.position, Quaternion.identity);
         Destroy(this.gameObject);
     }

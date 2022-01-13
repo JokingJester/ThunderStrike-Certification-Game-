@@ -8,17 +8,12 @@ public class SpawnManager : MonoBehaviour
     [SerializeField] private int _waveNumber = 1;
     [SerializeField] private Player _player;
 
-    private WaitForSeconds _startSpawnSeconds;
-    private WaitForSeconds _endWaveSeconds;
-
     private bool _spawnEnemies;
     private int _waveIndex;
     public Wave[] _waves;
     // Start is called before the first frame update
     void Start()
     {
-        _startSpawnSeconds = new WaitForSeconds(7);
-        _endWaveSeconds = new WaitForSeconds(1.5f);
         StartCoroutine(SpawnRoutine());
     }
 
@@ -26,7 +21,7 @@ public class SpawnManager : MonoBehaviour
     {
         UIManager.Instance.DisplayCurrentWave(_waveNumber);
         _spawnEnemies = true;
-        yield return _startSpawnSeconds;
+        yield return new WaitForSeconds(7);
         while (_spawnEnemies == true)
         {
 
@@ -104,13 +99,13 @@ public class SpawnManager : MonoBehaviour
                 {
                     _waveNumber++;
                     _waveIndex = 0;
-                    yield return _endWaveSeconds;
+                    yield return new WaitForSeconds(1.5f);
                     AudioManager.Instance.ChangeToRegularMusic();
                     StartCoroutine(SpawnRoutine());
                 }
                 else
                 {
-                    yield return _endWaveSeconds;
+                    yield return new WaitForSeconds(1.5f);
                     _player._canPause = false;
                     AudioManager.Instance.PlayVictoryMusic();
                     UIManager.Instance.ShowVictoryCanvas();

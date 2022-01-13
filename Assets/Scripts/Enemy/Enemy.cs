@@ -6,7 +6,6 @@ using UnityEngine.Playables;
 public class Enemy : MonoBehaviour, IDamageable
 {
     private double _duration;
-    private WaitForSeconds _chainFireballSeconds;
     [Header("Health Settngs")]
     [SerializeField] private float _health;
     [SerializeField] private float _explosionScale;
@@ -24,7 +23,6 @@ public class Enemy : MonoBehaviour, IDamageable
 
     void Start()
     {
-        _chainFireballSeconds = new WaitForSeconds(0.2f);
         if(hasPowerup == true)
         {
             MeshRenderer mesh = GetComponent<MeshRenderer>();
@@ -106,7 +104,7 @@ public class Enemy : MonoBehaviour, IDamageable
     public IEnumerator SetBoolBackToFalseRoutine()
     {
         hitByChainFireball = true;
-        yield return _chainFireballSeconds;
+        yield return new WaitForSeconds(0.2f);
         hitByChainFireball = false;
     }
 }
