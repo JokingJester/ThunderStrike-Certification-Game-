@@ -87,6 +87,8 @@ public class Player : MonoBehaviour, IDamageable
     }
     public void Movement(Vector2 direction)
     {
+        if(Time.timeScale == 0)
+            return;
         transform.Translate(direction * _speed * Time.unscaledDeltaTime);
 
         if (direction.y != 0)
@@ -120,7 +122,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Shoot()
     {
-        if (_weaponLevel < 1)
+        if (_weaponLevel < 1 || Time.timeScale == 0)
             return;
         _projectile = _playerWeapons[_weaponLevel - 1].projectile;
         if(_canFire < Time.time && _weaponLevel <= 4)
@@ -161,7 +163,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void SlowDownTime()
     {
-        if (_canSlowTime == true && _weaponLevel >= 2)
+        if (_canSlowTime == true && _weaponLevel >= 2 && Time.timeScale != 0)
             StartCoroutine(SlowTimeRoutine());
     }
 
