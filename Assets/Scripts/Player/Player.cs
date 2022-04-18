@@ -265,12 +265,12 @@ public class Player : MonoBehaviour, IDamageable
             return;
         _pauseCanvas.enabled = !_pauseCanvas.enabled;
 
-        if (_pauseCanvas.enabled == true)
+        if (_pauseCanvas.enabled == true && _camShake.canShakeCamera == true)
         {
             _camShake.enabled = false;
             Gamepad.current.PauseHaptics();
         }
-        else
+        else if(_pauseCanvas.enabled == false && _camShake.canShakeCamera == true)
         {
             _camShake.enabled = true;
             Gamepad.current.ResumeHaptics();
@@ -324,5 +324,10 @@ public class Player : MonoBehaviour, IDamageable
         Gamepad.current.ResumeHaptics();
         yield return new WaitForSeconds(0.6f);
         Gamepad.current.PauseHaptics();
+    }
+
+    public void Bob()
+    {
+        Debug.Log("BOBY FETT");
     }
 }

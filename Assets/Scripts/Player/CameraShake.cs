@@ -6,7 +6,7 @@ public class CameraShake : MonoBehaviour
 {
     [SerializeField] private Transform _cameraTransform;
 
-    private bool _canShakeCamera;
+    [HideInInspector] public bool canShakeCamera;
 
     private float _duration;
     private float _shakeFrequency = 0.2f;
@@ -21,10 +21,10 @@ public class CameraShake : MonoBehaviour
 
     void Update()
     {
-        if (_canShakeCamera == true && _duration > Time.time)
+        if (canShakeCamera == true && _duration > Time.time)
             ShakeCamera();
-        else if (Time.time > _duration && _canShakeCamera == true)
-            _canShakeCamera = false;
+        else if (Time.time > _duration && canShakeCamera == true)
+            canShakeCamera = false;
     }
 
     private void ShakeCamera()
@@ -37,6 +37,6 @@ public class CameraShake : MonoBehaviour
         _shakeFrequency = shakeFrequency;
         _secondsCameraShakes = secondsCameraShakes;
         _duration = Time.time + _secondsCameraShakes;
-        _canShakeCamera = true;
+        canShakeCamera = true;
     }
 }

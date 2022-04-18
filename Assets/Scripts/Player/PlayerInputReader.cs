@@ -17,17 +17,23 @@ public class PlayerInputReader : MonoBehaviour
 
     private void Pause_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
+        if (_player == null)
+            return;
         _player.TogglePause();
     }
 
     private void SlowTime_performed(UnityEngine.InputSystem.InputAction.CallbackContext obj)
     {
+        if (_player == null)
+            return;
         _player.SlowDownTime();
     }
 
     // Update is called once per frame
     void Update()
     {
+        if (_player == null)
+            return;
         _player.Movement(_input.Player.Movement.ReadValue<Vector2>());
         if (_input.Player.Shoot.ReadValue<float>() == 1)
             _player.Shoot();
