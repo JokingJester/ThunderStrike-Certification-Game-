@@ -5,6 +5,7 @@ using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using UnityEngine.InputSystem;
 using UnityEngine.EventSystems;
+using UnityEngine.Events;
 
 public class MainMenu : MonoBehaviour
 {
@@ -12,7 +13,6 @@ public class MainMenu : MonoBehaviour
     public Button startButton;
     public Button optionButton;
     public Button backButton;
-    private Button _gamepadSelectedButton;
 
     [Header("Sliders")]
     [SerializeField] private Slider _volumeSlider;
@@ -25,7 +25,6 @@ public class MainMenu : MonoBehaviour
     public static float brightness = 1f;
 
     public PlayerInput _input;
-
     private void Start()
     {
         _volumeSlider.value = audioVolume;
@@ -62,34 +61,37 @@ public class MainMenu : MonoBehaviour
 
     public void BackButton()
     {
-        if(Gamepad.current != null)
+        if (_input.currentControlScheme == "Gamepad")
             optionButton.Select();
+        else
+            eventSystem.SetSelectedGameObject(null);
     }
 
     public void OptionButton()
     {
-        if (Gamepad.current != null)
+        if (_input.currentControlScheme == "Gamepad")
             eventSystem.SetSelectedGameObject(backButton.gameObject);
+        else
+            eventSystem.SetSelectedGameObject(null);
     }
     public void ChangeControlScheme()
     {
-        if (_input.currentControlScheme == "Keyboard")
+        if (_input.currentControlScheme == "Gamepad")
         {
-            Debug.Log("Scheme is keyboard and mouse");
-        }
-        else if (_input.currentControlScheme == "Gamepad")
-        {
-            Debug.Log("Scheme is gamepad");
-            Debug.Log(eventSystem.currentSelectedGameObject);
-            if (_gamepadSelectedButton != null)
-                _gamepadSelectedButton.Select();
+            if (eventSystem.currentSelectedGameObject == null)
+            {
+                if (backButton.gameObject.activeInHierarchy == false)
+                    startButton.Select();
+                else
+                    backButton.Select();
+            }
             
         }
     }
 
-    public void SetSelectedButton(Button button)
+    private void Update()
     {
-        //eventSystem.currentSelectedGameObject
-        _gamepadSelectedButton = button;
+        if (Mouse.current.leftButton.wasPressedThisFrame)
+            _input.SwitchCurrentControlScheme("Keyboard");
     }
 }
