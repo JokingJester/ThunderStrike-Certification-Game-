@@ -2,6 +2,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.InputSystem;
 using UnityEngine.Rendering.PostProcessing;
 
 public class Player : MonoBehaviour, IDamageable
@@ -9,6 +10,7 @@ public class Player : MonoBehaviour, IDamageable
     private bool _takeDamage = true;
     private bool _usedCheckpoint;
     private bool _playOnSlowedTimescale;
+    private bool _stopInput;
 
     private float _canFire = -1;
     private float _canFireUnscaled = -1;
@@ -30,6 +32,7 @@ public class Player : MonoBehaviour, IDamageable
 
     [Header("Animator And Box Collider")]
     [SerializeField] private Animator _anim;
+    [SerializeField] private BoxCollider _boxCollider;
 
     [Header("Camera Shake")]
     [SerializeField] private CameraShake _camShake;
@@ -84,10 +87,13 @@ public class Player : MonoBehaviour, IDamageable
         _increaseDuration = new WaitForSeconds(_increasedDuration);
         _regRechargeRate = new WaitForSeconds(_defaultRechargeDuration);
         _decreasedRechargeRate = new WaitForSeconds(_decreasedRechargeDuration);
+
+        Gamepad.current.SetMotorSpeeds(0.1f, 0.1f);
+        Gamepad.current.PauseHaptics();
     }
     public void Movement(Vector2 direction)
     {
-        if(Time.timeScale == 0)
+        if(Time.timeScale == 0 || _stopInput == true)
             return;
         transform.Translate(direction * _speed * Time.unscaledDeltaTime);
 
@@ -223,14 +229,18 @@ public class Player : MonoBehaviour, IDamageable
         Health -= damageAmount;
         _weaponLevel--;
         _camShake.SetupCameraShake(0.4f, 0.4f);
-
+        StartCoroutine(VibrateController());
         if (_weaponLevel == 1)
             UIManager.Instance.DontShowQAbility();
         if(Health < 1)
         {
+            _stopInput = true; //pause haptics when game is paused
             Time.timeScale = 1;
             Instantiate(_largeExplosion, transform.position, Quaternion.identity);
-            this.gameObject.SetActive(false);
+            //i had to do it this way because turning off the gameobject would keep the controller vibrating forever.
+            _anim.SetTrigger("Powerup");
+            _anim.speed = 0;
+            _boxCollider.enabled = false;
             _canPause = false;
             if (_usedCheckpoint == false)
             {
@@ -255,6 +265,17 @@ public class Player : MonoBehaviour, IDamageable
             return;
         _pauseCanvas.enabled = !_pauseCanvas.enabled;
 
+        if (_pauseCanvas.enabled == true)
+        {
+            _camShake.enabled = false;
+            Gamepad.current.PauseHaptics();
+        }
+        else
+        {
+            _camShake.enabled = true;
+            Gamepad.current.ResumeHaptics();
+        }
+
         if (Time.timeScale == 1 || Time.timeScale == 0.3f)
             Time.timeScale = 0;
         else
@@ -271,14 +292,16 @@ public class Player : MonoBehaviour, IDamageable
         _usedCheckpoint = true;
         if(useIt == true)
         {
+            _stopInput = false;
             _canSlowTime = true;
             Health = 2;
             _weaponLevel = 2;
-            this.gameObject.SetActive(true);
+            _anim.speed = 1;
             UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
             UIManager.Instance.DisplayHealth(Health);
             UIManager.Instance.ShowQAbility();
             _canPause = true;
+            _boxCollider.enabled = true;
             StartCoroutine(TurnBoxColliderOnRoutine());
         }
         else
@@ -294,5 +317,12 @@ public class Player : MonoBehaviour, IDamageable
         yield return new WaitForSeconds(7f);
         _shield.SetActive(false);
         _takeDamage = true;
+    }
+
+    IEnumerator VibrateController()
+    {
+        Gamepad.current.ResumeHaptics();
+        yield return new WaitForSeconds(0.6f);
+        Gamepad.current.PauseHaptics();
     }
 }

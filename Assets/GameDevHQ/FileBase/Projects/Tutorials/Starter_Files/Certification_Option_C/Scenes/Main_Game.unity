@@ -2496,16 +2496,32 @@ PrefabInstance:
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 100002, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100002, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100004, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100004, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 100006, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_TagString
+      value: Player
+      objectReference: {fileID: 0}
+    - target: {fileID: 100006, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
       propertyPath: m_StaticEditorFlags
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100008, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100008, guid: 5dc75e6b038c946aaa4a76ea9b83b3ac, type: 3}
       propertyPath: m_StaticEditorFlags
@@ -2612,9 +2628,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _canSlowTime: 1
-  _health: 1
-  _weaponLevel: 1
+  _health: 2
+  _weaponLevel: 2
   _anim: {fileID: 285407785}
+  _boxCollider: {fileID: 285407784}
   _camShake: {fileID: 963194229}
   _pauseCanvas: {fileID: 534453113}
   _loseCanvas: {fileID: 38682295}
@@ -25083,6 +25100,10 @@ PrefabInstance:
     - target: {fileID: 100000, guid: 4d77d669407d03447bf923fbe16a1d10, type: 3}
       propertyPath: m_IsActive
       value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 100000, guid: 4d77d669407d03447bf923fbe16a1d10, type: 3}
+      propertyPath: m_TagString
+      value: Player
       objectReference: {fileID: 0}
     - target: {fileID: 100000, guid: 4d77d669407d03447bf923fbe16a1d10, type: 3}
       propertyPath: m_StaticEditorFlags
