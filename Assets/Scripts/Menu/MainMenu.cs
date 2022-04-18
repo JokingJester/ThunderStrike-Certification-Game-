@@ -12,11 +12,13 @@ public class MainMenu : MonoBehaviour
     public EventSystem eventSystem;
     public Button startButton;
     public Button optionButton;
+    public Button quitButton;
     public Button backButton;
 
     [Header("Sliders")]
     [SerializeField] private Slider _volumeSlider;
     [SerializeField] private Slider _brightnessSlider;
+    [SerializeField] private Slider _loadingBar;
     [Header("Audio")]
     [SerializeField] private AudioSource _source;
     [SerializeField] private AudioClip _clickSound;
@@ -36,7 +38,10 @@ public class MainMenu : MonoBehaviour
     }
     public void StartGame()
     {
-        SceneManager.LoadScene(1);
+        startButton.gameObject.SetActive(false);
+        optionButton.gameObject.SetActive(false);
+        quitButton.gameObject.SetActive(false);
+        StartCoroutine(LoadGameRoutine());
     }
     public void QuitGame()
     {
@@ -93,5 +98,16 @@ public class MainMenu : MonoBehaviour
     {
         if (Mouse.current.leftButton.wasPressedThisFrame)
             _input.SwitchCurrentControlScheme("Keyboard");
+    }
+
+    IEnumerator LoadGameRoutine()
+    {
+        _loadingBar.gameObject.SetActive(true);
+        AsyncOperation asyncOperation = SceneManager.LoadSceneAsync(1);
+        while (!asyncOperation.isDone)
+        {
+            _loadingBar.value = asyncOperation.progress;
+            yield return null;
+        }
     }
 }
