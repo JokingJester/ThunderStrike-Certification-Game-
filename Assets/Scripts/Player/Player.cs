@@ -88,8 +88,11 @@ public class Player : MonoBehaviour, IDamageable
         _regRechargeRate = new WaitForSeconds(_defaultRechargeDuration);
         _decreasedRechargeRate = new WaitForSeconds(_decreasedRechargeDuration);
 
-        Gamepad.current.SetMotorSpeeds(0.1f, 0.1f);
-        Gamepad.current.PauseHaptics();
+        if(Gamepad.current != null)
+        {
+            Gamepad.current.SetMotorSpeeds(0.1f, 0.1f);
+            Gamepad.current.PauseHaptics();
+        }
     }
     public void Movement(Vector2 direction)
     {
@@ -321,13 +324,10 @@ public class Player : MonoBehaviour, IDamageable
 
     IEnumerator VibrateController()
     {
+        if (Gamepad.current == null)
+            yield break;
         Gamepad.current.ResumeHaptics();
         yield return new WaitForSeconds(0.6f);
         Gamepad.current.PauseHaptics();
-    }
-
-    public void Bob()
-    {
-        Debug.Log("BOBY FETT");
     }
 }
