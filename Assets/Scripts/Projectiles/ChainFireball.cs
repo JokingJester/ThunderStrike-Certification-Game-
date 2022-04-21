@@ -11,10 +11,7 @@ public class ChainFireball : Fireball
     {
         if (_enemiesHit >= 2)
         {
-            _enemyTarget = null;
-            _enemiesHit = 0;
-            transform.eulerAngles = Vector3.zero;
-            this.gameObject.SetActive(false);
+            ResetChainLaser();
         }
 
         if(_enemyTarget == null)
@@ -30,12 +27,11 @@ public class ChainFireball : Fireball
 
     public override void InactiveWhenOutOfBounds()
     {
-        if (transform.position.x >= 32)
+        if (transform.position.x >= 32 || transform.position.y >= 26 || transform.position.y <= -26 || transform.position.x <= -32)
         {
             if (this.transform.parent.transform.parent.transform.parent == null)
             {
-                _enemiesHit = 0;
-                this.gameObject.SetActive(false);
+                ResetChainLaser();
             }
             else
             {
@@ -90,5 +86,16 @@ public class ChainFireball : Fireball
             }
             _enemyTarget = target;
         }
+
+        if (_enemyTarget == null)
+            ResetChainLaser();
+    }
+
+    public void ResetChainLaser()
+    {
+        _enemiesHit = 0;
+        _enemyTarget = null;
+        transform.eulerAngles = Vector3.zero;
+        this.gameObject.SetActive(false);
     }
 }
