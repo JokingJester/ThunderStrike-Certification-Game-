@@ -105,6 +105,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: badd7be7090c10e488edc04316ef8375, type: 2}
   - {fileID: 11400000, guid: 57abe2c5ee817c24d9bda7834190fb57, type: 2}
   _rotation: {x: 0, y: 0, z: 0, w: 0}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   hasPowerup: 0
   hitByChainFireball: 0
 --- !u!54 &4595851584148878664

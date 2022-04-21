@@ -52,7 +52,7 @@ MonoBehaviour:
   _damageAmount: 1
   _sound: {fileID: 8300000, guid: fdadf760a314bc04c837cace20f8cc48, type: 3}
   _hitSound: {fileID: 0}
-  _volume: 1.5
+  _volume: 0
   _hitSoundVolume: 0
   _speed: -57
 --- !u!65 &1116828462363563541

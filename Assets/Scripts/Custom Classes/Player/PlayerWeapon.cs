@@ -4,6 +4,6 @@ using UnityEngine;
 [System.Serializable]
 public struct PlayerWeapon
 {
-    public GameObject projectile;
     public string name;
+    public AudioClip sound;
 }

@@ -170,12 +170,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 70
-  _explosionScale: 12
-  _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
-  _powerup: {fileID: 0}
   _director: {fileID: 1154945150537099530}
   _assets:
   - {fileID: 11400000, guid: 8d4f47c6561ea2246b9dbed059e11a71, type: 2}
   _rotation: {x: 0, y: 0, z: 0, w: 0}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   hasPowerup: 0
   hitByChainFireball: 0

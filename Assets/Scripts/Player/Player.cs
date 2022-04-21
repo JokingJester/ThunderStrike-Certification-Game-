@@ -15,8 +15,6 @@ public class Player : MonoBehaviour, IDamageable
     private float _canFire = -1;
     private float _canFireUnscaled = -1;
 
-    private GameObject _projectile;
-
     private Transform _target;
 
     private WaitForSeconds _regDuration;
@@ -57,7 +55,8 @@ public class Player : MonoBehaviour, IDamageable
     [SerializeField] private Transform _upTarget;
     [SerializeField] private Transform _downTarget;
 
-    [Header("Projectiles")]
+    [Header("Projectiles and Audio Source")]
+    [SerializeField] private AudioSource _audioSource;
     [SerializeField] private PlayerWeapon[] _playerWeapons;
 
     [Header("Shield And Explosion Prefab")]
@@ -133,12 +132,10 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (_weaponLevel < 1 || Time.timeScale == 0)
             return;
-        //_projectile = _playerWeapons[_weaponLevel - 1].projectile;
         if(_canFire < Time.time && _weaponLevel <= 4)
         {
             GameObject projectile = PoolManager.Instance.RequestPrefab(transform.position + new Vector3(3f, -0.5f, 0), _weaponLevel - 1);
-            //if the weapon level is 2
-            //reset fireballs
+            _audioSource.PlayOneShot(_playerWeapons[_weaponLevel - 1].sound, MainMenu.audioVolume);
             if(_weaponLevel - 1 == 1)
             {
                 GameObject child1 = projectile.transform.GetChild(0).gameObject;
@@ -166,33 +163,29 @@ public class Player : MonoBehaviour, IDamageable
         else if(_canFireUnscaled < Time.unscaledTime && _weaponLevel >= 5)
         {
             GameObject projectile = PoolManager.Instance.RequestPrefab(transform.position + new Vector3(3f, -0.5f, 0), _weaponLevel - 1);
+            _audioSource.PlayOneShot(_playerWeapons[_weaponLevel - 1].sound, MainMenu.audioVolume);
             _canFire = Time.time + _firerate;
             _canFireUnscaled = Time.unscaledTime + _firerate;
         }
     }
 
-    private void OnTriggerEnter(Collider other)
+    public void UpgradeWeaponAndHealth()
     {
-        if(other.tag == "Powerup")
+        _audioSource.PlayOneShot(_powerupSound, MainMenu.audioVolume - 0.15f);
+        if (_weaponLevel < _playerWeapons.Length)
         {
-            other.gameObject.SetActive(false);
-            if (_weaponLevel < _playerWeapons.Length)
-            {
-                _weaponLevel++;
-                Health++;
-                if (_canSlowTime == true && _weaponLevel == 2)
-                    UIManager.Instance.ShowQAbility();
-            }
-            _anim.SetTrigger("Powerup");
-            UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
-            UIManager.Instance.DisplayHealth(Health);
-            UIManager.Instance.AddScore(16);
-            if (_weaponLevel == _playerWeapons.Length)
-                UIManager.Instance.AddScore(100);
-            AudioManager.Instance.PlayOneShot(_powerupSound, 0.6f);
+            _weaponLevel++;
+            Health++;
+            if (_canSlowTime == true && _weaponLevel == 2)
+                UIManager.Instance.ShowQAbility();
         }
+        _anim.SetTrigger("Powerup");
+        UIManager.Instance.DisplayCurrentWeapon(_weaponLevel, _playerWeapons[_weaponLevel - 1].name);
+        UIManager.Instance.DisplayHealth(Health);
+        UIManager.Instance.AddScore(16);
+        if (_weaponLevel == _playerWeapons.Length)
+            UIManager.Instance.AddScore(100);
     }
-
     public void SlowDownTime()
     {
         if (_canSlowTime == true && _weaponLevel >= 2 && Time.timeScale != 0)
@@ -249,7 +242,7 @@ public class Player : MonoBehaviour, IDamageable
 
     public void Damage(float damageAmount)
     {
-        AudioManager.Instance.PlayOneShot(_hitSound, 3f);
+        _audioSource.PlayOneShot(_hitSound, 3f);
         if (_takeDamage == false)
             return;
         Health -= damageAmount;

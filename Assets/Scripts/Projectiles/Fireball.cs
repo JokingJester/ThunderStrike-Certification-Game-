@@ -30,7 +30,7 @@ public class Fireball : Projectile
                 }
             }
         }
-        transform.Translate(Vector2.right * _speed * Time.deltaTime);
+            transform.Translate(Vector2.right * _speed * Time.deltaTime);
     }
 
     public virtual void InactiveWhenOutOfBounds()

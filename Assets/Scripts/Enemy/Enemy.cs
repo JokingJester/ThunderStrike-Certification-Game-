@@ -9,14 +9,14 @@ public class Enemy : MonoBehaviour, IDamageable
     private string player = "Player";
     [Header("Health Settngs")]
     [SerializeField] private float _health;
-    [SerializeField] private float _explosionScale;
-    [SerializeField] private GameObject _bigExplosion;
-    [SerializeField] private GameObject _powerup;
 
     [Header("Flight Pattern Settings")]
     [SerializeField] private PlayableDirector _director;
     [SerializeField] private PlayableAsset[] _assets;
     [SerializeField] private Quaternion _rotation;
+
+    [Header("Audio")]
+    [SerializeField] private AudioClip _hitSound;
 
     [HideInInspector] public bool hasPowerup;
     [HideInInspector] public bool hitByChainFireball;
@@ -79,8 +79,10 @@ public class Enemy : MonoBehaviour, IDamageable
         {
             UIManager.Instance.AddScore(40);
             GameObject explosion = PoolManager.Instance.RequestPrefab(transform.position, 8);
-            if(_explosionScale != 0)
-                explosion.transform.localScale = new Vector3(_explosionScale, _explosionScale, _explosionScale);
+            //play explosion sound
+
+            //if multi explosion = true
+            //spawn multi explosion
 
             if (hasPowerup == true)
             {
@@ -88,6 +90,9 @@ public class Enemy : MonoBehaviour, IDamageable
             }
             Destroy(this.gameObject);
         }
+        if (_hitSound != null)
+            AudioSource.PlayClipAtPoint(_hitSound, transform.position, MainMenu.audioVolume);
+
     }
 
     private void OnTriggerEnter(Collider other)

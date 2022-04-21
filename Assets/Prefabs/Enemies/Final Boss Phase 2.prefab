@@ -142,13 +142,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _health: 24
-  _explosionScale: 11
-  _bigExplosion: {fileID: 4839354891253967877, guid: 5631c187855814f039beb74819dfc8bc, type: 3}
-  _powerup: {fileID: 0}
   _director: {fileID: 1708484794}
   _assets:
   - {fileID: 11400000, guid: f17dbb7a142fcd64d900919a945c9a4b, type: 2}
   _rotation: {x: 0, y: 0, z: 0, w: 0}
+  _hitSound: {fileID: 8300000, guid: 586769e83407dae448f91c115518445d, type: 3}
   hasPowerup: 0
   hitByChainFireball: 0
 --- !u!65 &1535627351063119452

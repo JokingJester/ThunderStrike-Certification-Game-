@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class Projectile : MonoBehaviour
 {
+    private bool _readyForObjectPooling;
     [HideInInspector] public bool _canDamage = true;
     [SerializeField] protected GameObject _smallExplosion;
     [SerializeField] protected bool _damagePlayer;
@@ -20,15 +21,21 @@ public class Projectile : MonoBehaviour
 
     private void OnEnable()
     {
-        AudioManager.Instance.PlayOneShot(_sound, _volume);
+        if(_readyForObjectPooling == false)
+        {
+            _readyForObjectPooling = true;
+            return;
+        }
+
+        if (_sound != null)
+            AudioSource.PlayClipAtPoint(_sound, Camera.main.transform.position, MainMenu.audioVolume + _volume);
     }
 
     public virtual void OnTriggerEnter(Collider other)
     {
         if(other.tag == enemy && _damagePlayer == false)
         {
-            AudioManager.Instance.PlayOneShot(_hitSound, _hitSoundVolume);
-            //request pool manager 6 
+            AudioSource.PlayClipAtPoint(_hitSound, Camera.main.transform.position, MainMenu.audioVolume);
             GameObject smallExplosion = PoolManager.Instance.RequestPrefab(transform.position, 6);
             if (_canDamage == false)
                 return;

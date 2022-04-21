@@ -62,8 +62,6 @@ public class ChainFireball : Fireball
         yield return null;
         GameObject[] allEnemies = GameObject.FindGameObjectsWithTag("Enemy");
 
-        if(allEnemies.Length >=2)
-            AudioManager.Instance.PlayOneShot(_richochetSound, _volume + 1);
         if (allEnemies.Length >= 1)
         {
             float minimumDistance = Mathf.Infinity;
@@ -87,7 +85,9 @@ public class ChainFireball : Fireball
             _enemyTarget = target;
         }
 
-        if (_enemyTarget == null)
+        if (_enemyTarget != null)
+            AudioSource.PlayClipAtPoint(_richochetSound, Camera.main.transform.position, MainMenu.audioVolume +  2);
+        else
             ResetChainLaser();
     }
 
