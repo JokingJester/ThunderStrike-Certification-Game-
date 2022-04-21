@@ -282,35 +282,35 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 12
     messageOptions: 0
   - time: 5.0833335
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 12
     messageOptions: 0
   - time: 5.4666667
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 12
     messageOptions: 0
   - time: 5.9333334
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 12
     messageOptions: 0
   - time: 6.4
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3344378993597917337, guid: d4801ead3f26a8b4ab34506065fa7553, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 12
     messageOptions: 0
 --- !u!114 &11400000
 MonoBehaviour:

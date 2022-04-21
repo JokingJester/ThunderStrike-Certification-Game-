@@ -27,4 +27,16 @@ public class FinalBossBomb : Projectile
                 break;
         }
     }
+
+    public override void OnTriggerEnter(Collider other)
+    {
+        if (other.tag == "Player" && _damagePlayer == true)
+        {
+            IDamageable damage = other.GetComponent<IDamageable>();
+            if (damage != null)
+                damage.Damage(_damageAmount);
+            GameObject smallExplosion = PoolManager.Instance.RequestPrefab(transform.position, 6);
+            Destroy(this.gameObject);
+        }
+    }
 }

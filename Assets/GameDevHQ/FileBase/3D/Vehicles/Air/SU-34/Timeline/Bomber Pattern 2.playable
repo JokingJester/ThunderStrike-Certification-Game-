@@ -498,21 +498,21 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 3.1333334
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 3.45
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
 --- !u!114 &11400000
 MonoBehaviour:

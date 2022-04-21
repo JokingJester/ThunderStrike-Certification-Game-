@@ -60,6 +60,8 @@ PlayableDirector:
     value: {fileID: 6475528682318343791}
   - key: {fileID: 1845971548561410584, guid: fa221fe24992d554c9a5abb876e7ce2f, type: 2}
     value: {fileID: 6475528682318343791}
+  - key: {fileID: 3105485510034727875, guid: 12b0b4767475bcd47bc1b72c01e328ff, type: 2}
+    value: {fileID: 0}
   m_ExposedReferences:
     m_References: []
 --- !u!95 &6475528682318343791
@@ -104,7 +106,7 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 3f86e416179a6184392e3f46a98b50c9, type: 2}
   - {fileID: 11400000, guid: fa221fe24992d554c9a5abb876e7ce2f, type: 2}
   _rotation: {x: 0, y: 0, z: 0, w: 0}
-  _hasPowerup: 0
+  hasPowerup: 0
   hitByChainFireball: 0
 --- !u!54 &-1916743351808861514
 Rigidbody:

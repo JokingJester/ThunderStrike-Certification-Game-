@@ -17,6 +17,6 @@ public class Powerup : MonoBehaviour
         transform.Translate(Vector2.left * _speed * Time.deltaTime);
 
         if (transform.position.x <= -34)
-            Destroy(this.gameObject);
+            this.gameObject.SetActive(false);
     }
 }

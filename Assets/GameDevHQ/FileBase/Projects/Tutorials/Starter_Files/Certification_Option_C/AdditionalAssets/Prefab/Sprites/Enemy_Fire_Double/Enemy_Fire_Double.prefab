@@ -11,7 +11,6 @@ GameObject:
   - component: {fileID: 3517628329040794999}
   - component: {fileID: 2227840659213593537}
   - component: {fileID: 1116828462363563541}
-  - component: {fileID: 253225499958844604}
   m_Layer: 0
   m_Name: Enemy_Fire_Double
   m_TagString: Untagged
@@ -69,19 +68,6 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1.8432022, y: 2.171755, z: 1}
   m_Center: {x: 0.17553979, y: 0.5858774, z: 0}
---- !u!114 &253225499958844604
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3517628329040794998}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: b9b4a00475cf4504da48a7d7b1a001ba, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _time: 4
 --- !u!1001 &3517628327529868730
 PrefabInstance:
   m_ObjectHideFlags: 0

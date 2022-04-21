@@ -133,16 +133,39 @@ public class Player : MonoBehaviour, IDamageable
     {
         if (_weaponLevel < 1 || Time.timeScale == 0)
             return;
-        _projectile = _playerWeapons[_weaponLevel - 1].projectile;
+        //_projectile = _playerWeapons[_weaponLevel - 1].projectile;
         if(_canFire < Time.time && _weaponLevel <= 4)
         {
-            Instantiate(_projectile, transform.position + new Vector3(3f,-0.5f,0), Quaternion.identity);
+            GameObject projectile = PoolManager.Instance.RequestPrefab(transform.position + new Vector3(3f, -0.5f, 0), _weaponLevel - 1);
+            //if the weapon level is 2
+            //reset fireballs
+            if(_weaponLevel - 1 == 1)
+            {
+                GameObject child1 = projectile.transform.GetChild(0).gameObject;
+                GameObject child2 = projectile.transform.GetChild(1).gameObject;
+                child1.transform.localPosition = new Vector3(0, 0.82f, 0);
+                child2.transform.localPosition = new Vector3(0, -0.82f, 0);
+                child1.SetActive(true);
+                child2.SetActive(true);
+            }
+            else if(_weaponLevel -1 == 2)
+            {
+                GameObject child1 = projectile.transform.GetChild(0).gameObject;
+                GameObject child2 = projectile.transform.GetChild(1).gameObject;
+                GameObject child3 = projectile.transform.GetChild(2).gameObject;
+                child1.transform.localPosition = new Vector3(1.1f, 0, 0);
+                child2.transform.localPosition = new Vector3(-0.95f, 1.05f, 0);
+                child3.transform.localPosition = new Vector3(-1.87f, -0.55f, 0);
+                child1.SetActive(true);
+                child2.SetActive(true);
+                child3.SetActive(true);
+            }
             _canFire = Time.time + _firerate;
             _canFireUnscaled = Time.unscaledTime + _firerate;
         }
         else if(_canFireUnscaled < Time.unscaledTime && _weaponLevel >= 5)
         {
-            Instantiate(_projectile, transform.position + new Vector3(3f, -0.5f, 0), Quaternion.identity);
+            GameObject projectile = PoolManager.Instance.RequestPrefab(transform.position + new Vector3(3f, -0.5f, 0), _weaponLevel - 1);
             _canFire = Time.time + _firerate;
             _canFireUnscaled = Time.unscaledTime + _firerate;
         }
@@ -152,7 +175,7 @@ public class Player : MonoBehaviour, IDamageable
     {
         if(other.tag == "Powerup")
         {
-            Destroy(other.gameObject);
+            other.gameObject.SetActive(false);
             if (_weaponLevel < _playerWeapons.Length)
             {
                 _weaponLevel++;
@@ -239,7 +262,7 @@ public class Player : MonoBehaviour, IDamageable
         {
             _stopInput = true; //pause haptics when game is paused
             Time.timeScale = 1;
-            Instantiate(_largeExplosion, transform.position, Quaternion.identity);
+            GameObject largeExplosion = PoolManager.Instance.RequestPrefab(transform.position, 8);
             //i had to do it this way because turning off the gameobject would keep the controller vibrating forever.
             _anim.SetTrigger("Powerup");
             _anim.speed = 0;

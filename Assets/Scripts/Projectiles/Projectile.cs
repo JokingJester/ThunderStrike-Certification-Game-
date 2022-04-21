@@ -15,25 +15,39 @@ public class Projectile : MonoBehaviour
     [SerializeField] protected float _volume;
     [SerializeField] protected float _hitSoundVolume;
 
-    public virtual void Start()
+    private string enemy = "Enemy";
+
+
+    private void OnEnable()
     {
         AudioManager.Instance.PlayOneShot(_sound, _volume);
     }
 
     public virtual void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Enemy" && _damagePlayer == false)
+        if(other.tag == enemy && _damagePlayer == false)
         {
             AudioManager.Instance.PlayOneShot(_hitSound, _hitSoundVolume);
-            if(_smallExplosion != null)
-                Instantiate(_smallExplosion, transform.position, Quaternion.identity);
+            //request pool manager 6 
+            GameObject smallExplosion = PoolManager.Instance.RequestPrefab(transform.position, 6);
             if (_canDamage == false)
                 return;
             IDamageable damage = other.GetComponent<IDamageable>();
             if (damage != null)
                 damage.Damage(_damageAmount);
 
-            Destroy(this.gameObject);
+            if (this.transform.parent.transform.parent.transform.parent == null)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+                if (transform.parent.GetChild(0).gameObject.activeInHierarchy == false && transform.parent.GetChild(1).gameObject.activeInHierarchy == false)
+                {
+                    transform.parent.gameObject.SetActive(false);
+                }
+            }
         }
 
         if(other.tag == "Player" && _damagePlayer == true)
@@ -41,8 +55,20 @@ public class Projectile : MonoBehaviour
             IDamageable damage = other.GetComponent<IDamageable>();
             if (damage != null)
                 damage.Damage(_damageAmount);
-            Instantiate(_smallExplosion, transform.position, Quaternion.identity);
-            Destroy(this.gameObject);
+            GameObject smallExplosion = PoolManager.Instance.RequestPrefab(transform.position, 6);
+
+            if (this.transform.parent.transform.parent.transform.parent == null)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                this.gameObject.SetActive(false);
+                if (transform.parent.GetChild(0).gameObject.activeInHierarchy == false && transform.parent.GetChild(1).gameObject.activeInHierarchy == false)
+                {
+                    transform.parent.gameObject.SetActive(false);
+                }
+            }
         }
     }
 }

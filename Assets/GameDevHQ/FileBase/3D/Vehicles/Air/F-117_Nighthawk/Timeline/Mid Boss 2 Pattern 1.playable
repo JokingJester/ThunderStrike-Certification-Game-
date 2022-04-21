@@ -1028,145 +1028,145 @@ AnimationClip:
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 4.1666665
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 4.95
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 5.35
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 5.95
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 7.733333
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 8.716666
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 9.566667
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 10.5
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 11.166667
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 12.816667
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 13.066667
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 13.933333
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 14.85
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 15.316667
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
   - time: 16.116667
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 17.9
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 19.483334
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 21.583334
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 3517628329040794998, guid: 21f456583848f6046a71c2314ffbf170, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 13
     messageOptions: 0
   - time: 24.433332
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0
-  - time: 25.683332
+  - time: 25.783333
     functionName: ShootProjectile
     data: 
     objectReferenceParameter: {fileID: 7642610540579889079, guid: f7b495f227c4f1f448b8e8d0a7637ff6, type: 3}
     floatParameter: 0
-    intParameter: 0
+    intParameter: 10
     messageOptions: 0

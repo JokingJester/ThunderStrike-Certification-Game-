@@ -8,9 +8,8 @@ public class Fireball : Projectile
     private Player _player;
     // Start is called before the first frame update
 
-    public override void Start()
+    public void Start()
     {
-        base.Start();
         GameObject player = GameObject.FindGameObjectWithTag("Player");
         if (player != null)
             _player = player.GetComponent<Player>();
@@ -18,8 +17,7 @@ public class Fireball : Projectile
     // Update is called once per frame
     public virtual void Update()
     {
-        if (transform.position.x >= 32)
-            Destroy(this.gameObject);
+        InactiveWhenOutOfBounds();
 
         if (_damagePlayer == false)
         {
@@ -33,5 +31,20 @@ public class Fireball : Projectile
             }
         }
         transform.Translate(Vector2.right * _speed * Time.deltaTime);
+    }
+
+    public virtual void InactiveWhenOutOfBounds()
+    {
+        if (transform.position.x >= 32 || transform.position.x <= -32)
+        {
+            if (this.transform.parent.transform.parent.transform.parent == null)
+            {
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                transform.parent.gameObject.SetActive(false);
+            }
+        }
     }
 }

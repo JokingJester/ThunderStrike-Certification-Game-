@@ -6,6 +6,7 @@ using UnityEngine.Playables;
 public class Enemy : MonoBehaviour, IDamageable
 {
     private double _duration;
+    private string player = "Player";
     [Header("Health Settngs")]
     [SerializeField] private float _health;
     [SerializeField] private float _explosionScale;
@@ -64,9 +65,10 @@ public class Enemy : MonoBehaviour, IDamageable
         }
     }
 
-    public void ShootProjectile(GameObject prefab)
+    public void ShootProjectile(int id)
     {
-        Instantiate(prefab, transform.position, _rotation);
+        GameObject prefab = PoolManager.Instance.RequestPrefab(transform.position, id);
+        prefab.transform.rotation = _rotation;
     }
 
     public void Damage(float damageAmount)
@@ -76,19 +78,21 @@ public class Enemy : MonoBehaviour, IDamageable
         if (Health < 1)
         {
             UIManager.Instance.AddScore(40);
-            GameObject explosion = Instantiate(_bigExplosion, transform.position, Quaternion.identity);
+            GameObject explosion = PoolManager.Instance.RequestPrefab(transform.position, 8);
             if(_explosionScale != 0)
                 explosion.transform.localScale = new Vector3(_explosionScale, _explosionScale, _explosionScale);
 
             if (hasPowerup == true)
-                Instantiate(_powerup, transform.position, Quaternion.identity);
+            {
+                GameObject powerup = PoolManager.Instance.RequestPrefab(transform.position, 7);
+            }
             Destroy(this.gameObject);
         }
     }
 
     private void OnTriggerEnter(Collider other)
     {
-        if(other.tag == "Player")
+        if(other.tag == player)
         {
             IDamageable idamage = other.GetComponent<IDamageable>();
             if (idamage != null)

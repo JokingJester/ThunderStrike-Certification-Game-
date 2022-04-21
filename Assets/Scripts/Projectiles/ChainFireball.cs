@@ -10,7 +10,12 @@ public class ChainFireball : Fireball
     public override void Update()
     {
         if (_enemiesHit >= 2)
-            Destroy(this.gameObject);
+        {
+            _enemyTarget = null;
+            _enemiesHit = 0;
+            transform.eulerAngles = Vector3.zero;
+            this.gameObject.SetActive(false);
+        }
 
         if(_enemyTarget == null)
             base.Update();
@@ -23,6 +28,22 @@ public class ChainFireball : Fireball
         }
     }
 
+    public override void InactiveWhenOutOfBounds()
+    {
+        if (transform.position.x >= 32)
+        {
+            if (this.transform.parent.transform.parent.transform.parent == null)
+            {
+                _enemiesHit = 0;
+                this.gameObject.SetActive(false);
+            }
+            else
+            {
+                transform.parent.gameObject.SetActive(false);
+            }
+        }
+    }
+
     public override void OnTriggerEnter(Collider other)
     {
         if (other.tag == "Enemy" && _damagePlayer == false)
@@ -30,7 +51,7 @@ public class ChainFireball : Fireball
             IDamageable damage = other.GetComponent<IDamageable>();
             if (damage != null)
                 damage.Damage(_damageAmount);
-            Instantiate(_smallExplosion, transform.position, Quaternion.identity);
+            GameObject smallExplosion = PoolManager.Instance.RequestPrefab(transform.position, 6);
 
             Enemy enemy = other.GetComponent<Enemy>();
             if (enemy != null)

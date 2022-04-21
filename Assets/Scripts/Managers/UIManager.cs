@@ -25,6 +25,8 @@ public class UIManager : MonoBehaviour
     }
 
     private int _score;
+    private string wave = "Wave ";
+    private string _scoreString = "Score: ";
     [Header("Waves UI")]
     [SerializeField] private string[] _waveMessages;
     [SerializeField] private TMP_Text _waveText;
@@ -66,7 +68,7 @@ public class UIManager : MonoBehaviour
     }
     public void DisplayCurrentWave(int waveNumer)
     {
-        _waveText.text = "Wave " + waveNumer;
+        _waveText.text = wave + waveNumer;
         _waveMessageText.text = _waveMessages[waveNumer - 1];
         _modal.OpenWindow();
         StartCoroutine(CloseModelWindow());
@@ -85,7 +87,7 @@ public class UIManager : MonoBehaviour
     public void AddScore(int score)
     {
         _score += score;
-        _scoreText.text = "Score: " + _score;
+        _scoreText.text = _scoreString + _score;
     }
 
     public void ShowQAbility()
